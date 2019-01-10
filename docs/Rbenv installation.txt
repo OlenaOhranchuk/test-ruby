@@ -1,0 +1,24 @@
+1. Install rbenv and ruby-build:
+	sudo apt update
+	sudo apt install rbenv ruby-build
+
+2. Initialize rbenv when terminal starts:
+	rbenv init
+
+3. The previous command should output something like this:
+	# Load rbenv automatically by appending
+	# the following to ~/.bashrc:
+
+	eval "$(rbenv init -)"
+
+4. You need to copy the last line (eval...) and past it at the end of your .bashrc file.
+
+5. Reopen your terminal. Now rbenv should be installed.
+
+If you need to get latest versions of ruby you should install ruby-build as a plugin:
+	mkdir -p "$(rbenv root)"/plugins
+	git clone https://github.com/rbenv/ruby-build.git "$(rbenv root)"/plugins/ruby-build
+
+Useful links:
+https://github.com/rbenv/rbenv
+https://github.com/rbenv/ruby-build

@@ -1,0 +1,19 @@
+List avaiable ruby versions:
+	rbenv versions
+
+Show current ruby version set by rbenv:
+	rbenv version
+
+List avaiable for instalation ruby versions:
+	rbenv install -l
+
+Install a new ruby version:
+	rbenv install 2.4.1
+
+List other useful rbenv commands:
+	rbenv help
+
+Ruby version can be set by .ruby-version file in the root of a project.
+
+You can also set a ruby version for a shell session (for a current open terminal tab):
+	rbenv shell 2.4.1
