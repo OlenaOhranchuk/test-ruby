@@ -6,6 +6,7 @@ module Helpers
     JSON.parse(response.body).with_indifferent_access
   end
 
+  # TODO: Remove this. Use #create_new_auth_token directly.
   def auth_headers
     user.create_new_auth_token
   end

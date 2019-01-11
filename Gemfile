@@ -19,6 +19,7 @@ gem 'pg', '~> 0.18.2'
 gem 'pry-rails', '~> 0.3.6'
 gem 'puma', '~> 3.0'
 gem 'rack-cors', '~> 0.4.0'
+gem 'rspec_api_documentation'
 gem 'sendgrid', '~> 1.2.4'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
