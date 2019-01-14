@@ -39,7 +39,7 @@ RSpec.configure do |config|
   end
 
   # Add Content-Type header to all acceptance examples.
-  config.before :each do
+  config.before :each do |example|
     if example.metadata[:type] == :acceptance
       header 'Content-Type', 'application/json'
     end
