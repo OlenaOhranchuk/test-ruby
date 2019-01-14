@@ -29,192 +29,6 @@
     "application/xml"
   ],
   "paths": {
-    "/api/v1/users/{id}": {
-      "get": {
-        "tags": [
-          "Users"
-        ],
-        "summary": "",
-        "description": "",
-        "consumes": [
-          "application/json"
-        ],
-        "produces": [
-          "application/json"
-        ],
-        "parameters": [
-          {
-            "name": "Content-Type",
-            "in": "header",
-            "description": "",
-            "required": true,
-            "type": "string",
-            "default": "application/json"
-          },
-          {
-            "name": "access-token",
-            "in": "header",
-            "description": "",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "client",
-            "in": "header",
-            "description": "",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "uid",
-            "in": "header",
-            "description": "",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "token-type",
-            "in": "header",
-            "description": "",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "expiry",
-            "in": "header",
-            "description": "",
-            "required": false,
-            "type": "integer"
-          },
-          {
-            "name": "id",
-            "in": "path",
-            "description": "",
-            "required": true,
-            "type": "integer"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Getting user's data",
-            "schema": {
-              "description": "",
-              "type": "object",
-              "properties": {
-              }
-            },
-            "headers": {
-              "X-Frame-Options": {
-                "description": "",
-                "type": "string",
-                "x-example-value": "SAMEORIGIN"
-              },
-              "X-XSS-Protection": {
-                "description": "",
-                "type": "string",
-                "x-example-value": "1; mode=block"
-              },
-              "X-Content-Type-Options": {
-                "description": "",
-                "type": "string",
-                "x-example-value": "nosniff"
-              },
-              "X-Download-Options": {
-                "description": "",
-                "type": "string",
-                "x-example-value": "noopen"
-              },
-              "X-Permitted-Cross-Domain-Policies": {
-                "description": "",
-                "type": "string",
-                "x-example-value": "none"
-              },
-              "Referrer-Policy": {
-                "description": "",
-                "type": "string",
-                "x-example-value": "strict-origin-when-cross-origin"
-              },
-              "Content-Type": {
-                "description": "",
-                "type": "string",
-                "x-example-value": "application/json; charset=utf-8"
-              },
-              "access-token": {
-                "description": "",
-                "type": "string",
-                "x-example-value": "5QJGGDr4yPNbL00hxoM5xw"
-              },
-              "token-type": {
-                "description": "",
-                "type": "string",
-                "x-example-value": "Bearer"
-              },
-              "client": {
-                "description": "",
-                "type": "string",
-                "x-example-value": "4lgJr6vKzKw44b4qyhv6Ow"
-              },
-              "expiry": {
-                "description": "",
-                "type": "string",
-                "x-example-value": "1610396793"
-              },
-              "uid": {
-                "description": "",
-                "type": "string",
-                "x-example-value": "zachariah@jakubowski.biz"
-              },
-              "ETag": {
-                "description": "",
-                "type": "string",
-                "x-example-value": "W/\"353a6759d17ec3d8fce9fa6c87f4a61a\""
-              },
-              "Cache-Control": {
-                "description": "",
-                "type": "string",
-                "x-example-value": "max-age=0, private, must-revalidate"
-              },
-              "X-Request-Id": {
-                "description": "",
-                "type": "string",
-                "x-example-value": "f9ad596d-b6b4-40b8-9142-6c60ed5c4ed1"
-              },
-              "X-Runtime": {
-                "description": "",
-                "type": "string",
-                "x-example-value": "0.085916"
-              },
-              "Vary": {
-                "description": "",
-                "type": "string",
-                "x-example-value": "Origin"
-              },
-              "Content-Length": {
-                "description": "",
-                "type": "string",
-                "x-example-value": "148"
-              }
-            },
-            "examples": {
-              "application/json": {
-                "user": {
-                  "id": 200,
-                  "email": "zachariah@jakubowski.biz",
-                  "name": "Elinor Gottlieb",
-                  "first_name": "Elinor",
-                  "last_name": "Gottlieb",
-                  "username": "alana_lang"
-                }
-              }
-            }
-          }
-        },
-        "deprecated": false,
-        "security": [
-
-        ]
-      }
-    },
     "/api/v1/user/profile": {
       "get": {
         "tags": [
@@ -229,14 +43,6 @@
           "application/json"
         ],
         "parameters": [
-          {
-            "name": "Content-Type",
-            "in": "header",
-            "description": "",
-            "required": true,
-            "type": "string",
-            "default": "application/json"
-          },
           {
             "name": "access-token",
             "in": "header",
@@ -321,7 +127,7 @@
               "access-token": {
                 "description": "",
                 "type": "string",
-                "x-example-value": "5J1ZcgSL51jXgv6TJ4LzIw"
+                "x-example-value": "TqZ_7Z9DZP7qM2dtFo_APg"
               },
               "token-type": {
                 "description": "",
@@ -331,22 +137,22 @@
               "client": {
                 "description": "",
                 "type": "string",
-                "x-example-value": "ooD7VNQ3nbdDGuUw6kjq9A"
+                "x-example-value": "ttxGgr_ysPzukNCF8jkf3g"
               },
               "expiry": {
                 "description": "",
                 "type": "string",
-                "x-example-value": "1610396793"
+                "x-example-value": "1610650876"
               },
               "uid": {
                 "description": "",
                 "type": "string",
-                "x-example-value": "hilario@bernhardmuller.biz"
+                "x-example-value": "ayla@hilpertrempel.io"
               },
               "ETag": {
                 "description": "",
                 "type": "string",
-                "x-example-value": "W/\"8927a972640d2e9c9bdab1ff91f58292\""
+                "x-example-value": "W/\"3bbbd16b5d0879c1c8ce375ccd1e4821\""
               },
               "Cache-Control": {
                 "description": "",
@@ -356,12 +162,12 @@
               "X-Request-Id": {
                 "description": "",
                 "type": "string",
-                "x-example-value": "408557d6-729d-4207-b2f5-9849dc1bdd82"
+                "x-example-value": "0835e2f8-e012-472e-8b49-00393a9006be"
               },
               "X-Runtime": {
                 "description": "",
                 "type": "string",
-                "x-example-value": "0.060124"
+                "x-example-value": "0.069029"
               },
               "Vary": {
                 "description": "",
@@ -371,18 +177,400 @@
               "Content-Length": {
                 "description": "",
                 "type": "string",
-                "x-example-value": "148"
+                "x-example-value": "140"
               }
             },
             "examples": {
               "application/json": {
                 "user": {
-                  "id": 201,
-                  "email": "hilario@bernhardmuller.biz",
-                  "name": "Aditya Gislason",
-                  "first_name": "Aditya",
-                  "last_name": "Gislason",
-                  "username": "kenyatta"
+                  "id": 290,
+                  "email": "ayla@hilpertrempel.io",
+                  "name": "Jessyca Kilback",
+                  "first_name": "Jessyca",
+                  "last_name": "Kilback",
+                  "username": "felix"
+                }
+              }
+            }
+          }
+        },
+        "deprecated": false,
+        "security": [
+
+        ]
+      }
+    },
+    "/api/v1/users/{id}": {
+      "get": {
+        "tags": [
+          "Users"
+        ],
+        "summary": "",
+        "description": "",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "access-token",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "client",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "uid",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "token-type",
+            "in": "header",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "expiry",
+            "in": "header",
+            "description": "",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Getting user's data",
+            "schema": {
+              "description": "",
+              "type": "object",
+              "properties": {
+              }
+            },
+            "headers": {
+              "X-Frame-Options": {
+                "description": "",
+                "type": "string",
+                "x-example-value": "SAMEORIGIN"
+              },
+              "X-XSS-Protection": {
+                "description": "",
+                "type": "string",
+                "x-example-value": "1; mode=block"
+              },
+              "X-Content-Type-Options": {
+                "description": "",
+                "type": "string",
+                "x-example-value": "nosniff"
+              },
+              "X-Download-Options": {
+                "description": "",
+                "type": "string",
+                "x-example-value": "noopen"
+              },
+              "X-Permitted-Cross-Domain-Policies": {
+                "description": "",
+                "type": "string",
+                "x-example-value": "none"
+              },
+              "Referrer-Policy": {
+                "description": "",
+                "type": "string",
+                "x-example-value": "strict-origin-when-cross-origin"
+              },
+              "Content-Type": {
+                "description": "",
+                "type": "string",
+                "x-example-value": "application/json; charset=utf-8"
+              },
+              "access-token": {
+                "description": "",
+                "type": "string",
+                "x-example-value": "N-qJYfeOYfYP6lvZFhAxuQ"
+              },
+              "token-type": {
+                "description": "",
+                "type": "string",
+                "x-example-value": "Bearer"
+              },
+              "client": {
+                "description": "",
+                "type": "string",
+                "x-example-value": "3xGDUv5RgFoRqDwG3Bz8SA"
+              },
+              "expiry": {
+                "description": "",
+                "type": "string",
+                "x-example-value": "1610650876"
+              },
+              "uid": {
+                "description": "",
+                "type": "string",
+                "x-example-value": "monserrate@cruickshank.io"
+              },
+              "ETag": {
+                "description": "",
+                "type": "string",
+                "x-example-value": "W/\"02d280124876da22a2352b52a09c38c0\""
+              },
+              "Cache-Control": {
+                "description": "",
+                "type": "string",
+                "x-example-value": "max-age=0, private, must-revalidate"
+              },
+              "X-Request-Id": {
+                "description": "",
+                "type": "string",
+                "x-example-value": "4ca30f5a-65d7-4030-836d-e78a30af2c8a"
+              },
+              "X-Runtime": {
+                "description": "",
+                "type": "string",
+                "x-example-value": "0.051620"
+              },
+              "Vary": {
+                "description": "",
+                "type": "string",
+                "x-example-value": "Origin"
+              },
+              "Content-Length": {
+                "description": "",
+                "type": "string",
+                "x-example-value": "139"
+              }
+            },
+            "examples": {
+              "application/json": {
+                "user": {
+                  "id": 291,
+                  "email": "monserrate@cruickshank.io",
+                  "name": "Hans Nicolas",
+                  "first_name": "Hans",
+                  "last_name": "Nicolas",
+                  "username": "howard"
+                }
+              }
+            }
+          }
+        },
+        "deprecated": false,
+        "security": [
+
+        ]
+      }
+    },
+    "/api/v1/user": {
+      "patch": {
+        "tags": [
+          "Users"
+        ],
+        "summary": "",
+        "description": "",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "description": "",
+            "required": false,
+            "schema": {
+              "description": "",
+              "type": "object",
+              "properties": {
+                "user": {
+                  "type": "object",
+                  "properties": {
+                    "username": {
+                      "type": "string",
+                      "description": "User username"
+                    },
+                    "first_name": {
+                      "type": "string",
+                      "description": "User first name"
+                    },
+                    "last_name": {
+                      "type": "string",
+                      "description": "User last name"
+                    },
+                    "email": {
+                      "type": "string",
+                      "description": "User email"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          {
+            "name": "access-token",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "client",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "uid",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "token-type",
+            "in": "header",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "expiry",
+            "in": "header",
+            "description": "",
+            "required": false,
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Updating data of current user",
+            "schema": {
+              "description": "",
+              "type": "object",
+              "properties": {
+              }
+            },
+            "headers": {
+              "X-Frame-Options": {
+                "description": "",
+                "type": "string",
+                "x-example-value": "SAMEORIGIN"
+              },
+              "X-XSS-Protection": {
+                "description": "",
+                "type": "string",
+                "x-example-value": "1; mode=block"
+              },
+              "X-Content-Type-Options": {
+                "description": "",
+                "type": "string",
+                "x-example-value": "nosniff"
+              },
+              "X-Download-Options": {
+                "description": "",
+                "type": "string",
+                "x-example-value": "noopen"
+              },
+              "X-Permitted-Cross-Domain-Policies": {
+                "description": "",
+                "type": "string",
+                "x-example-value": "none"
+              },
+              "Referrer-Policy": {
+                "description": "",
+                "type": "string",
+                "x-example-value": "strict-origin-when-cross-origin"
+              },
+              "Content-Type": {
+                "description": "",
+                "type": "string",
+                "x-example-value": "application/json; charset=utf-8"
+              },
+              "access-token": {
+                "description": "",
+                "type": "string",
+                "x-example-value": "_4REQcGUKmYL__hWH2pWpg"
+              },
+              "token-type": {
+                "description": "",
+                "type": "string",
+                "x-example-value": "Bearer"
+              },
+              "client": {
+                "description": "",
+                "type": "string",
+                "x-example-value": "zSnpJ92_9HlIAh0KudbURA"
+              },
+              "expiry": {
+                "description": "",
+                "type": "string",
+                "x-example-value": "1610650876"
+              },
+              "uid": {
+                "description": "",
+                "type": "string",
+                "x-example-value": "brisa_effertz@hand.biz"
+              },
+              "ETag": {
+                "description": "",
+                "type": "string",
+                "x-example-value": "W/\"c4f22279016550087552b8f33fed1c63\""
+              },
+              "Cache-Control": {
+                "description": "",
+                "type": "string",
+                "x-example-value": "max-age=0, private, must-revalidate"
+              },
+              "X-Request-Id": {
+                "description": "",
+                "type": "string",
+                "x-example-value": "d4b3604f-1468-4af6-8ad9-5c95055c295a"
+              },
+              "X-Runtime": {
+                "description": "",
+                "type": "string",
+                "x-example-value": "0.052993"
+              },
+              "Vary": {
+                "description": "",
+                "type": "string",
+                "x-example-value": "Origin"
+              },
+              "Content-Length": {
+                "description": "",
+                "type": "string",
+                "x-example-value": "133"
+              }
+            },
+            "examples": {
+              "application/json": {
+                "user": {
+                  "id": 292,
+                  "email": "brisa_effertz@hand.biz",
+                  "name": "Solon Stehr",
+                  "first_name": "Solon",
+                  "last_name": "Stehr",
+                  "username": "chloe"
                 }
               }
             }

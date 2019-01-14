@@ -45,7 +45,3 @@ RSpec.configure do |config|
     end
   end
 end
-
-RspecApiDocumentation.configure do |config|
-  config.format = :open_api
-end
