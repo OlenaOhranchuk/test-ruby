@@ -2,6 +2,7 @@ require 'rails_helper'
 
 describe 'GET api/v1/user/profile', type: :request do
   let(:user) { create(:user) }
+  let(:auth_headers) { user.create_new_auth_token }
 
   it 'returns success' do
     get profile_api_v1_user_path, headers: auth_headers, as: :json
