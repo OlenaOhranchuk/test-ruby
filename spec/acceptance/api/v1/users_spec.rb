@@ -1,7 +1,7 @@
 require 'rails_helper'
 require 'rspec_api_documentation/dsl'
 
-resource "Users" do
+resource "Users", type: :acceptance do
   add_auth_parameters
 
   let(:current_user) { create(:user) }
