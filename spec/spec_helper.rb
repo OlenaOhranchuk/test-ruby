@@ -3,6 +3,8 @@ ENV['RAILS_ENV'] ||= 'test'
 require File.expand_path('../../config/environment', __FILE__)
 
 require 'factory_bot_rails'
+require 'acceptance_group_helpers'
+require 'acceptance_helpers'
 require 'helpers'
 require 'webmock/rspec'
 require 'shoulda/matchers'
@@ -13,7 +15,11 @@ FactoryBot.reload
 Dir[Rails.root.join('spec/support/**/*.rb')].each { |file| require file }
 
 RSpec.configure do |config|
+  config.extend AcceptanceGroupHelpers, type: :acceptance
+  config.include AcceptanceHelpers, type: :acceptance
   config.include Helpers
+  config.include FactoryBot::Syntax::Methods
+
   config.expect_with :rspec do |expectations|
     expectations.include_chain_clauses_in_custom_matcher_descriptions = true
   end
@@ -27,9 +33,22 @@ RSpec.configure do |config|
   config.expect_with :rspec do |c|
     c.syntax = :expect
   end
-  config.include FactoryBot::Syntax::Methods
 
   config.before :each do
     ActionMailer::Base.deliveries.clear
   end
+
+  # Add Content-Type header to all acceptance examples.
+  config.before :each do |example|
+    if example.metadata[:type] == :acceptance
+      header 'Content-Type', 'application/json'
+    end
+  end
+end
+
+RspecApiDocumentation.configure do |config|
+  config.docs_dir = Rails.root.join("public", "api")
+  config.format = :open_api
+  config.request_body_formatter = Proc.new { |params| params.to_json }
+  config.client_method = :rspec_api_client
 end

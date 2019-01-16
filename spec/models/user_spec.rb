@@ -42,13 +42,4 @@ describe User do
       it { is_expected.to validate_presence_of(:email) }
     end
   end
-
-  context 'when was created with regular login' do
-    let!(:user) { create(:user) }
-    let(:full_name) { user.full_name }
-
-    it 'returns the correct name' do
-      expect(full_name).to eq(user.username)
-    end
-  end
 end

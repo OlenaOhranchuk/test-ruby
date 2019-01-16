@@ -7,7 +7,7 @@ describe 'PUT api/v1/users/passwords/', type: :request do
       reset_password_token: password_token,
       redirect_url: ENV['PASSWORD_RESET_URL']
     }
-    get edit_user_password_path, params: params, headers: auth_headers
+    get edit_user_password_path, params: params, headers: user.create_new_auth_token
     edit_response_params = Addressable::URI.parse(response.header['Location']).query_values
     {
       'access-token' => edit_response_params['token'],
