@@ -18,8 +18,9 @@ gem 'pg', '~> 0.18.2'
 gem 'pry-rails', '~> 0.3.6'
 gem 'puma', '~> 3.0'
 gem 'rack-cors', '~> 0.4.0'
-gem 'rspec_api_documentation'
+gem 'rspec_api_documentation', '~> 6.1.0'
 gem 'sendgrid', '~> 1.2.4'
+gem 'sidekiq', '~> 5.2.5'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
