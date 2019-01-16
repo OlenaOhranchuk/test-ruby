@@ -7,7 +7,6 @@ gem 'rails', '~> 5.2.2'
 gem 'activeadmin', '~> 1.4.3'
 gem 'aws-sdk-s3', '~> 1', require: false
 gem 'bootsnap', '~> 1.3.0'
-gem 'delayed_job_active_record', '~> 4.1.3'
 gem 'devise', '~> 4.4.3'
 gem 'devise_token_auth', '~> 0.1.43'
 gem 'draper', '~> 3.0.0'
@@ -19,8 +18,9 @@ gem 'pg', '~> 0.18.2'
 gem 'pry-rails', '~> 0.3.6'
 gem 'puma', '~> 3.0'
 gem 'rack-cors', '~> 0.4.0'
-gem 'rspec_api_documentation'
+gem 'rspec_api_documentation', '~> 6.1.0'
 gem 'sendgrid', '~> 1.2.4'
+gem 'sidekiq', '~> 5.2.5'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
