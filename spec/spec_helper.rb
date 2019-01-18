@@ -50,7 +50,6 @@ RspecApiDocumentation.configure do |config|
   config.docs_dir = Rails.root.join('public', 'api')
   config.format = :open_api
   config.request_body_formatter = proc { |params| params.to_json }
-  config.response_body_formatter = proc { |params| params.to_json }
   config.client_method = :rspec_api_client
   config.response_headers_to_include = %w(
     Content-Length

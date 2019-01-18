@@ -4,12 +4,20 @@ require 'rspec_api_documentation/dsl'
 resource 'Users', type: :acceptance do
   add_auth_parameters
 
-  let(:current_user) { create(:user) }
-  before { authenticate!(current_user) }
+  let(:user) { create(:user) }
+  before { authenticate!(user) }
+
+  get '/api/v1/user/profile' do
+    example 'Getting data of the current user' do
+      do_request
+
+      expect(status).to eq(200)
+    end
+  end
 
   get '/api/v1/users/:id' do
     example "Getting user's data" do
-      do_request(id: current_user.id)
+      do_request(id: user.id)
 
       expect(status).to eq(200)
     end
@@ -24,16 +32,8 @@ resource 'Users', type: :acceptance do
     end
 
     example 'Updating data of the current user' do
-      data = attributes_for(:user).slice(:username, :first_name, :last_name, :email)
-      do_request(user: data)
-
-      expect(status).to eq(200)
-    end
-  end
-
-  get '/api/v1/user/profile' do
-    example 'Getting data of the current user' do
-      do_request
+      attrs = attributes_for(:user).slice(:email, :username, :first_name, :last_name)
+      do_request(user: attrs)
 
       expect(status).to eq(200)
     end

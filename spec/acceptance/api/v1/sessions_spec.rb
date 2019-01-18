@@ -2,7 +2,7 @@ require 'rails_helper'
 require 'rspec_api_documentation/dsl'
 
 resource 'Sessions', type: :acceptance do
-  let(:current_user) { create(:user) }
+  let(:user) { create(:user) }
 
   post '/api/v1/users/sign_in' do
     with_options scope: :user, in: :body do
@@ -11,7 +11,7 @@ resource 'Sessions', type: :acceptance do
     end
 
     example 'Singing in a user' do
-      do_request(user: { email: current_user.email, password: '12345678' })
+      do_request(user: { email: user.email, password: '12345678' })
 
       expect(status).to eq(200)
     end
@@ -19,7 +19,7 @@ resource 'Sessions', type: :acceptance do
 
   delete '/api/v1/users/sign_out' do
     add_auth_parameters(optional: false)
-    before { authenticate!(current_user) }
+    before { authenticate!(user) }
 
     example 'Singing out the current user' do
       do_request
