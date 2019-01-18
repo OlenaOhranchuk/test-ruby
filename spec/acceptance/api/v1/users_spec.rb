@@ -5,7 +5,7 @@ resource 'Users', type: :acceptance do
   add_auth_parameters
 
   let(:user) { create(:user) }
-  before { authenticate!(user) }
+  before { authenticate(user) }
 
   get '/api/v1/user/profile' do
     example 'Getting data of the current user' do

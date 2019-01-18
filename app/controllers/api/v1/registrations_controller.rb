@@ -5,6 +5,7 @@ module Api
     class RegistrationsController < DeviseTokenAuth::RegistrationsController
       protect_from_forgery with: :exception
       include Api::Concerns::ActAsApiRequest
+      before_action :configure_permitted_parameters, if: :devise_controller?
 
       private
 
@@ -15,6 +16,18 @@ module Api
 
       def render_create_success
         render json: { user: resource_data }
+      end
+
+      # PUT api/v1/users allows updating only a password and it requires
+      # a current password for that. It actually could update anything in
+      # the current user, but we already have another route for that, which
+      # is PUT api/v1/user. Using this new route we can update anything
+      # expect password.
+      def configure_permitted_parameters
+        devise_parameter_sanitizer.permit(
+          :account_update,
+          keys: [:password, :password_confirmation, :current_password]
+        )
       end
     end
   end

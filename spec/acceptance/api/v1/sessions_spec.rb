@@ -19,7 +19,7 @@ resource 'Sessions', type: :acceptance do
 
   delete '/api/v1/users/sign_out' do
     add_auth_parameters(optional: false)
-    before { authenticate!(user) }
+    before { authenticate(user) }
 
     example 'Singing out the current user' do
       do_request
