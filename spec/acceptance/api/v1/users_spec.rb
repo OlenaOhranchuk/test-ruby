@@ -23,7 +23,7 @@ resource 'Users', type: :acceptance do
       parameter :email
     end
 
-    example 'Updating data of current user' do
+    example 'Updating data of the current user' do
       data = attributes_for(:user).slice(:username, :first_name, :last_name, :email)
       do_request(user: data)
 
@@ -32,7 +32,7 @@ resource 'Users', type: :acceptance do
   end
 
   get '/api/v1/user/profile' do
-    example 'Getting data of current user' do
+    example 'Getting data of the current user' do
       do_request
 
       expect(status).to eq(200)
