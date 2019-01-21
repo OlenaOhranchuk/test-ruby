@@ -4,18 +4,32 @@ require 'rspec_api_documentation/dsl'
 resource 'Users', type: :acceptance do
   add_auth_parameters
 
-  let(:current_user) { create(:user) }
-  before { authenticate!(current_user) }
+  let(:user) { create(:user) }
+  before { authenticate(user) }
 
-  get '/api/v1/users/:id' do
-    example "Getting user's data" do
-      do_request(id: current_user.id)
+  get '/api/v1/user/profile' do
+    example 'Getting data of the current user' do
+      do_request
 
       expect(status).to eq(200)
     end
   end
 
-  patch '/api/v1/user' do
+  get '/api/v1/users/:id' do
+    example "Getting user's data" do
+      do_request(id: user.id)
+
+      expect(status).to eq(200)
+    end
+
+    example 'User is not found' do
+      do_request(id: 7)
+
+      expect(status).to eq(404)
+    end
+  end
+
+  put '/api/v1/user' do
     with_options scope: :user, in: :body do
       parameter :username
       parameter :first_name
@@ -23,19 +37,17 @@ resource 'Users', type: :acceptance do
       parameter :email
     end
 
-    example 'Updating data of current user' do
-      data = attributes_for(:user).slice(:username, :first_name, :last_name, :email)
-      do_request(user: data)
+    example 'Updating data of the current user' do
+      attrs = attributes_for(:user).slice(:email, :username, :first_name, :last_name)
+      do_request(user: attrs)
 
       expect(status).to eq(200)
     end
-  end
 
-  get '/api/v1/user/profile' do
-    example 'Getting data of current user' do
-      do_request
+    example 'Invalid attributes' do
+      do_request(user: { email: 'test.com' })
 
-      expect(status).to eq(200)
+      expect(status).to eq(400)
     end
   end
 end

@@ -29,6 +29,1047 @@
     "application/xml"
   ],
   "paths": {
+    "/api/v1/users/password": {
+      "put": {
+        "tags": [
+          "Passwords"
+        ],
+        "summary": "",
+        "description": "",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "description": "",
+            "required": false,
+            "schema": {
+              "description": "",
+              "type": "object",
+              "properties": {
+                "password": {
+                  "type": "string",
+                  "description": " password"
+                },
+                "password_confirmation": {
+                  "type": "string",
+                  "description": " password confirmation"
+                }
+              }
+            }
+          },
+          {
+            "name": "access-token",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "client",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "uid",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "token-type",
+            "in": "header",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "expiry",
+            "in": "header",
+            "description": "",
+            "required": false,
+            "type": "integer"
+          },
+          {
+            "name": "token",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Updating the password",
+            "schema": {
+              "description": "",
+              "type": "object",
+              "properties": {
+              }
+            },
+            "headers": {
+              "Content-Type": {
+                "description": "",
+                "type": "string",
+                "x-example-value": "application/json; charset=utf-8"
+              },
+              "access-token": {
+                "description": "",
+                "type": "string",
+                "x-example-value": "HOOPRXOe2ulybS_-hyTRlQ"
+              },
+              "token-type": {
+                "description": "",
+                "type": "string",
+                "x-example-value": "Bearer"
+              },
+              "client": {
+                "description": "",
+                "type": "string",
+                "x-example-value": "JTJnZuMs1a6zOFx0qdLuSQ"
+              },
+              "expiry": {
+                "description": "",
+                "type": "string",
+                "x-example-value": "1611259638"
+              },
+              "uid": {
+                "description": "",
+                "type": "string",
+                "x-example-value": "myah@runte.net"
+              },
+              "Content-Length": {
+                "description": "",
+                "type": "string",
+                "x-example-value": "338"
+              }
+            },
+            "examples": {
+              "application/json": {
+                "success": true,
+                "data": {
+                  "id": 553,
+                  "provider": "email",
+                  "allow_password_change": false,
+                  "email": "myah@runte.net",
+                  "uid": "myah@runte.net",
+                  "first_name": "Gladys",
+                  "last_name": "Ledner",
+                  "username": "carter.hammes",
+                  "created_at": "2019-01-21T20:07:18.344Z",
+                  "updated_at": "2019-01-21T20:07:18.467Z"
+                },
+                "message": "Your password has been successfully updated."
+              }
+            }
+          },
+          "422": {
+            "description": "New password is invalid",
+            "schema": {
+              "description": "",
+              "type": "object",
+              "properties": {
+              }
+            },
+            "headers": {
+              "Content-Type": {
+                "description": "",
+                "type": "string",
+                "x-example-value": "application/json; charset=utf-8"
+              },
+              "Content-Length": {
+                "description": "",
+                "type": "string",
+                "x-example-value": "150"
+              }
+            },
+            "examples": {
+              "application/json": {
+                "success": false,
+                "errors": {
+                  "password": [
+                    "is too short (minimum is 8 characters)"
+                  ],
+                  "full_messages": [
+                    "Password is too short (minimum is 8 characters)"
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "deprecated": false,
+        "security": [
+
+        ]
+      },
+      "post": {
+        "tags": [
+          "Passwords"
+        ],
+        "summary": "",
+        "description": "",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "description": "",
+            "required": false,
+            "schema": {
+              "description": "",
+              "type": "object",
+              "properties": {
+                "email": {
+                  "type": "string",
+                  "description": " email"
+                },
+                "redirect_url": {
+                  "type": "string",
+                  "description": " redirect url"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Requesting a password change",
+            "schema": {
+              "description": "",
+              "type": "object",
+              "properties": {
+              }
+            },
+            "headers": {
+              "Content-Type": {
+                "description": "",
+                "type": "string",
+                "x-example-value": "application/json; charset=utf-8"
+              },
+              "Content-Length": {
+                "description": "",
+                "type": "string",
+                "x-example-value": "134"
+              }
+            },
+            "examples": {
+              "application/json": {
+                "success": true,
+                "message": "An email has been sent to 'george.schuppe@sipes.com' containing instructions for resetting your password."
+              }
+            }
+          },
+          "404": {
+            "description": "User's email is not found",
+            "schema": {
+              "description": "",
+              "type": "object",
+              "properties": {
+              }
+            },
+            "headers": {
+              "Content-Type": {
+                "description": "",
+                "type": "string",
+                "x-example-value": "application/json; charset=utf-8"
+              },
+              "Content-Length": {
+                "description": "",
+                "type": "string",
+                "x-example-value": "59"
+              }
+            },
+            "examples": {
+              "application/json": {
+                "error": "Unable to find user with email 'not@found.com'."
+              }
+            }
+          }
+        },
+        "deprecated": false,
+        "security": [
+
+        ]
+      }
+    },
+    "/api/v1/users": {
+      "put": {
+        "tags": [
+          "Registrations"
+        ],
+        "summary": "",
+        "description": "",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "description": "",
+            "required": false,
+            "schema": {
+              "description": "",
+              "type": "object",
+              "properties": {
+                "current_password": {
+                  "type": "string",
+                  "description": " current password"
+                },
+                "password": {
+                  "type": "string",
+                  "description": " password"
+                },
+                "password_confirmation": {
+                  "type": "string",
+                  "description": " password confirmation"
+                }
+              }
+            }
+          },
+          {
+            "name": "access-token",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "client",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "uid",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "token-type",
+            "in": "header",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "expiry",
+            "in": "header",
+            "description": "",
+            "required": false,
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Updating password of the current user",
+            "schema": {
+              "description": "",
+              "type": "object",
+              "properties": {
+              }
+            },
+            "headers": {
+              "Content-Type": {
+                "description": "",
+                "type": "string",
+                "x-example-value": "application/json; charset=utf-8"
+              },
+              "access-token": {
+                "description": "",
+                "type": "string",
+                "x-example-value": "YS2nbofDiPnEkOslsvsQ0Q"
+              },
+              "token-type": {
+                "description": "",
+                "type": "string",
+                "x-example-value": "Bearer"
+              },
+              "client": {
+                "description": "",
+                "type": "string",
+                "x-example-value": "gITQLIBOEv2s3jeBPwpX_Q"
+              },
+              "expiry": {
+                "description": "",
+                "type": "string",
+                "x-example-value": "1611259638"
+              },
+              "uid": {
+                "description": "",
+                "type": "string",
+                "x-example-value": "kristopher.walter@tillman.com"
+              },
+              "Content-Length": {
+                "description": "",
+                "type": "string",
+                "x-example-value": "313"
+              }
+            },
+            "examples": {
+              "application/json": {
+                "status": "success",
+                "data": {
+                  "id": 556,
+                  "email": "kristopher.walter@tillman.com",
+                  "uid": "kristopher.walter@tillman.com",
+                  "provider": "email",
+                  "allow_password_change": false,
+                  "first_name": "Graciela",
+                  "last_name": "Schumm",
+                  "username": "ally_koch",
+                  "created_at": "2019-01-21T20:07:18.674Z",
+                  "updated_at": "2019-01-21T20:07:18.781Z"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Invalid attributes",
+            "schema": {
+              "description": "",
+              "type": "object",
+              "properties": {
+              }
+            },
+            "headers": {
+              "Content-Type": {
+                "description": "",
+                "type": "string",
+                "x-example-value": "application/json; charset=utf-8"
+              },
+              "access-token": {
+                "description": "",
+                "type": "string",
+                "x-example-value": "iZWVTsBp6rktSHXqFZs5ng"
+              },
+              "token-type": {
+                "description": "",
+                "type": "string",
+                "x-example-value": "Bearer"
+              },
+              "client": {
+                "description": "",
+                "type": "string",
+                "x-example-value": "XWB85UszDaW3muZSP1rGgA"
+              },
+              "expiry": {
+                "description": "",
+                "type": "string",
+                "x-example-value": "1611259638"
+              },
+              "uid": {
+                "description": "",
+                "type": "string",
+                "x-example-value": "kelton_stehr@morarryan.com"
+              },
+              "Content-Length": {
+                "description": "",
+                "type": "string",
+                "x-example-value": "111"
+              }
+            },
+            "examples": {
+              "application/json": {
+                "status": "error",
+                "errors": {
+                  "current_password": [
+                    "is invalid"
+                  ],
+                  "full_messages": [
+                    "Current password is invalid"
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "deprecated": false,
+        "security": [
+
+        ]
+      },
+      "post": {
+        "tags": [
+          "Registrations"
+        ],
+        "summary": "",
+        "description": "",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "description": "",
+            "required": false,
+            "schema": {
+              "description": "",
+              "type": "object",
+              "properties": {
+                "user": {
+                  "type": "object",
+                  "properties": {
+                    "email": {
+                      "type": "string",
+                      "description": "User email"
+                    },
+                    "password": {
+                      "type": "string",
+                      "description": "User password"
+                    },
+                    "password_confirmation": {
+                      "type": "string",
+                      "description": "User password confirmation"
+                    },
+                    "username": {
+                      "type": "string",
+                      "description": "User username"
+                    },
+                    "first_name": {
+                      "type": "string",
+                      "description": "User first name"
+                    },
+                    "last_name": {
+                      "type": "string",
+                      "description": "User last name"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Signing up a user",
+            "schema": {
+              "description": "",
+              "type": "object",
+              "properties": {
+              }
+            },
+            "headers": {
+              "access-token": {
+                "description": "",
+                "type": "string",
+                "x-example-value": "aSHn7ixeIULHRpT6MQaTIw"
+              },
+              "token-type": {
+                "description": "",
+                "type": "string",
+                "x-example-value": "Bearer"
+              },
+              "client": {
+                "description": "",
+                "type": "string",
+                "x-example-value": "jHiS4BAWvT7pMX5xGEu8ZA"
+              },
+              "expiry": {
+                "description": "",
+                "type": "string",
+                "x-example-value": "1611259638"
+              },
+              "uid": {
+                "description": "",
+                "type": "string",
+                "x-example-value": "chad@hagenes.org"
+              },
+              "Content-Type": {
+                "description": "",
+                "type": "string",
+                "x-example-value": "application/json; charset=utf-8"
+              },
+              "Content-Length": {
+                "description": "",
+                "type": "string",
+                "x-example-value": "265"
+              }
+            },
+            "examples": {
+              "application/json": {
+                "user": {
+                  "id": 555,
+                  "email": "chad@hagenes.org",
+                  "allow_password_change": false,
+                  "first_name": "Aurelio",
+                  "last_name": "Littel",
+                  "username": "maurine",
+                  "created_at": "2019-01-21T20:07:18.606Z",
+                  "updated_at": "2019-01-21T20:07:18.657Z",
+                  "provider": "email",
+                  "uid": "chad@hagenes.org"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Invalid attributes",
+            "schema": {
+              "description": "",
+              "type": "object",
+              "properties": {
+              }
+            },
+            "headers": {
+              "Content-Type": {
+                "description": "",
+                "type": "string",
+                "x-example-value": "application/json; charset=utf-8"
+              },
+              "Content-Length": {
+                "description": "",
+                "type": "string",
+                "x-example-value": "393"
+              }
+            },
+            "examples": {
+              "application/json": {
+                "status": "error",
+                "data": {
+                  "id": null,
+                  "email": "kendall@larsonwunsch.org",
+                  "allow_password_change": false,
+                  "first_name": "Everette",
+                  "last_name": "Schowalter",
+                  "username": "reyes_dubuque",
+                  "created_at": null,
+                  "updated_at": null,
+                  "provider": "email",
+                  "uid": "kendall@larsonwunsch.org"
+                },
+                "errors": {
+                  "password_confirmation": [
+                    "doesn't match Password"
+                  ],
+                  "full_messages": [
+                    "Password confirmation doesn't match Password"
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "deprecated": false,
+        "security": [
+
+        ]
+      },
+      "delete": {
+        "tags": [
+          "Registrations"
+        ],
+        "summary": "",
+        "description": "",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "access-token",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "client",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "uid",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Deleting the current user",
+            "schema": {
+              "description": "",
+              "type": "object",
+              "properties": {
+              }
+            },
+            "headers": {
+              "Content-Type": {
+                "description": "",
+                "type": "string",
+                "x-example-value": "application/json; charset=utf-8"
+              },
+              "Content-Length": {
+                "description": "",
+                "type": "string",
+                "x-example-value": "87"
+              }
+            },
+            "examples": {
+              "application/json": {
+                "status": "success",
+                "message": "Account with UID 'nicola@roob.net' has been destroyed."
+              }
+            }
+          }
+        },
+        "deprecated": false,
+        "security": [
+
+        ]
+      }
+    },
+    "/api/v1/users/sign_in": {
+      "post": {
+        "tags": [
+          "Sessions"
+        ],
+        "summary": "",
+        "description": "",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "description": "",
+            "required": false,
+            "schema": {
+              "description": "",
+              "type": "object",
+              "properties": {
+                "user": {
+                  "type": "object",
+                  "properties": {
+                    "email": {
+                      "type": "string",
+                      "description": "User email"
+                    },
+                    "password": {
+                      "type": "string",
+                      "description": "User password"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Signing in a user",
+            "schema": {
+              "description": "",
+              "type": "object",
+              "properties": {
+              }
+            },
+            "headers": {
+              "Content-Type": {
+                "description": "",
+                "type": "string",
+                "x-example-value": "application/json; charset=utf-8"
+              },
+              "access-token": {
+                "description": "",
+                "type": "string",
+                "x-example-value": "zIUW5PcEVcf_R53mVmPZHA"
+              },
+              "token-type": {
+                "description": "",
+                "type": "string",
+                "x-example-value": "Bearer"
+              },
+              "client": {
+                "description": "",
+                "type": "string",
+                "x-example-value": "DL7cqUaaOIEoQk8KjU06_Q"
+              },
+              "expiry": {
+                "description": "",
+                "type": "string",
+                "x-example-value": "1611259639"
+              },
+              "uid": {
+                "description": "",
+                "type": "string",
+                "x-example-value": "oma_hansen@koepp.name"
+              },
+              "Content-Length": {
+                "description": "",
+                "type": "string",
+                "x-example-value": "275"
+              }
+            },
+            "examples": {
+              "application/json": {
+                "user": {
+                  "id": 559,
+                  "email": "oma_hansen@koepp.name",
+                  "uid": "oma_hansen@koepp.name",
+                  "provider": "email",
+                  "allow_password_change": false,
+                  "first_name": "Ana",
+                  "last_name": "Rohan",
+                  "username": "halle_cronin",
+                  "created_at": "2019-01-21T20:07:19.008Z",
+                  "updated_at": "2019-01-21T20:07:19.071Z"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Invalid password or email",
+            "schema": {
+              "description": "",
+              "type": "object",
+              "properties": {
+              }
+            },
+            "headers": {
+              "Content-Type": {
+                "description": "",
+                "type": "string",
+                "x-example-value": "application/json; charset=utf-8"
+              },
+              "Content-Length": {
+                "description": "",
+                "type": "string",
+                "x-example-value": "56"
+              }
+            },
+            "examples": {
+              "application/json": {
+                "error": "Invalid login credentials. Please try again."
+              }
+            }
+          }
+        },
+        "deprecated": false,
+        "security": [
+
+        ]
+      }
+    },
+    "/api/v1/users/sign_out": {
+      "delete": {
+        "tags": [
+          "Sessions"
+        ],
+        "summary": "",
+        "description": "",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "access-token",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "client",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "uid",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Signing out the current user",
+            "schema": {
+              "description": "",
+              "type": "object",
+              "properties": {
+              }
+            },
+            "headers": {
+              "Content-Type": {
+                "description": "",
+                "type": "string",
+                "x-example-value": "application/json; charset=utf-8"
+              },
+              "Content-Length": {
+                "description": "",
+                "type": "string",
+                "x-example-value": "16"
+              }
+            },
+            "examples": {
+              "application/json": {
+                "success": true
+              }
+            }
+          }
+        },
+        "deprecated": false,
+        "security": [
+
+        ]
+      }
+    },
+    "/api/v1/user/profile": {
+      "get": {
+        "tags": [
+          "Users"
+        ],
+        "summary": "",
+        "description": "",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "access-token",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "client",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "uid",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "token-type",
+            "in": "header",
+            "description": "",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "expiry",
+            "in": "header",
+            "description": "",
+            "required": false,
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Getting data of the current user",
+            "schema": {
+              "description": "",
+              "type": "object",
+              "properties": {
+              }
+            },
+            "headers": {
+              "Content-Type": {
+                "description": "",
+                "type": "string",
+                "x-example-value": "application/json; charset=utf-8"
+              },
+              "access-token": {
+                "description": "",
+                "type": "string",
+                "x-example-value": "Y0aEHlNJ8BTQcF26e8Cl0w"
+              },
+              "token-type": {
+                "description": "",
+                "type": "string",
+                "x-example-value": "Bearer"
+              },
+              "client": {
+                "description": "",
+                "type": "string",
+                "x-example-value": "uVpKZ-5lJ0vC5xV98Mgt3w"
+              },
+              "expiry": {
+                "description": "",
+                "type": "string",
+                "x-example-value": "1611259639"
+              },
+              "uid": {
+                "description": "",
+                "type": "string",
+                "x-example-value": "marlon.cremin@osinski.io"
+              },
+              "Content-Length": {
+                "description": "",
+                "type": "string",
+                "x-example-value": "117"
+              }
+            },
+            "examples": {
+              "application/json": {
+                "user": {
+                  "id": 561,
+                  "email": "marlon.cremin@osinski.io",
+                  "first_name": "Kaleb",
+                  "last_name": "Hane",
+                  "username": "constance"
+                }
+              }
+            }
+          }
+        },
+        "deprecated": false,
+        "security": [
+
+        ]
+      }
+    },
     "/api/v1/users/{id}": {
       "get": {
         "tags": [
@@ -96,36 +1137,6 @@
               }
             },
             "headers": {
-              "X-Frame-Options": {
-                "description": "",
-                "type": "string",
-                "x-example-value": "SAMEORIGIN"
-              },
-              "X-XSS-Protection": {
-                "description": "",
-                "type": "string",
-                "x-example-value": "1; mode=block"
-              },
-              "X-Content-Type-Options": {
-                "description": "",
-                "type": "string",
-                "x-example-value": "nosniff"
-              },
-              "X-Download-Options": {
-                "description": "",
-                "type": "string",
-                "x-example-value": "noopen"
-              },
-              "X-Permitted-Cross-Domain-Policies": {
-                "description": "",
-                "type": "string",
-                "x-example-value": "none"
-              },
-              "Referrer-Policy": {
-                "description": "",
-                "type": "string",
-                "x-example-value": "strict-origin-when-cross-origin"
-              },
               "Content-Type": {
                 "description": "",
                 "type": "string",
@@ -134,7 +1145,7 @@
               "access-token": {
                 "description": "",
                 "type": "string",
-                "x-example-value": "ZFKkVzLypFdh6bxGdDD6GQ"
+                "x-example-value": "DmRklyaZUmpO0RxQ_0-TJg"
               },
               "token-type": {
                 "description": "",
@@ -144,58 +1155,59 @@
               "client": {
                 "description": "",
                 "type": "string",
-                "x-example-value": "OrOvA35Om0nSWwOkc-l6hg"
+                "x-example-value": "g8MM5nF6BFL6tA6HwSwndA"
               },
               "expiry": {
                 "description": "",
                 "type": "string",
-                "x-example-value": "1610732537"
+                "x-example-value": "1611259639"
               },
               "uid": {
                 "description": "",
                 "type": "string",
-                "x-example-value": "stanford@auer.info"
-              },
-              "ETag": {
-                "description": "",
-                "type": "string",
-                "x-example-value": "W/\"58d6cbd7e39ccb50eb51d1ee825a7fc1\""
-              },
-              "Cache-Control": {
-                "description": "",
-                "type": "string",
-                "x-example-value": "max-age=0, private, must-revalidate"
-              },
-              "X-Request-Id": {
-                "description": "",
-                "type": "string",
-                "x-example-value": "5ec7091f-e49f-48b3-891f-3f6aecf64a80"
-              },
-              "X-Runtime": {
-                "description": "",
-                "type": "string",
-                "x-example-value": "0.070709"
-              },
-              "Vary": {
-                "description": "",
-                "type": "string",
-                "x-example-value": "Origin"
+                "x-example-value": "jordi.feeney@grahamtromp.co"
               },
               "Content-Length": {
                 "description": "",
                 "type": "string",
-                "x-example-value": "116"
+                "x-example-value": "118"
               }
             },
             "examples": {
               "application/json": {
                 "user": {
-                  "id": 623,
-                  "email": "stanford@auer.info",
-                  "first_name": "Mariah",
-                  "last_name": "Lebsack",
-                  "username": "nya_cremin"
+                  "id": 562,
+                  "email": "jordi.feeney@grahamtromp.co",
+                  "first_name": "Garry",
+                  "last_name": "Hyatt",
+                  "username": "dudley"
                 }
+              }
+            }
+          },
+          "404": {
+            "description": "User is not found",
+            "schema": {
+              "description": "",
+              "type": "object",
+              "properties": {
+              }
+            },
+            "headers": {
+              "Content-Type": {
+                "description": "",
+                "type": "string",
+                "x-example-value": "application/json; charset=utf-8"
+              },
+              "Content-Length": {
+                "description": "",
+                "type": "string",
+                "x-example-value": "36"
+              }
+            },
+            "examples": {
+              "application/json": {
+                "error": "Couldn't find the record"
               }
             }
           }
@@ -207,7 +1219,7 @@
       }
     },
     "/api/v1/user": {
-      "patch": {
+      "put": {
         "tags": [
           "Users"
         ],
@@ -291,7 +1303,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Updating data of current user",
+            "description": "Updating data of the current user",
             "schema": {
               "description": "",
               "type": "object",
@@ -299,36 +1311,6 @@
               }
             },
             "headers": {
-              "X-Frame-Options": {
-                "description": "",
-                "type": "string",
-                "x-example-value": "SAMEORIGIN"
-              },
-              "X-XSS-Protection": {
-                "description": "",
-                "type": "string",
-                "x-example-value": "1; mode=block"
-              },
-              "X-Content-Type-Options": {
-                "description": "",
-                "type": "string",
-                "x-example-value": "nosniff"
-              },
-              "X-Download-Options": {
-                "description": "",
-                "type": "string",
-                "x-example-value": "noopen"
-              },
-              "X-Permitted-Cross-Domain-Policies": {
-                "description": "",
-                "type": "string",
-                "x-example-value": "none"
-              },
-              "Referrer-Policy": {
-                "description": "",
-                "type": "string",
-                "x-example-value": "strict-origin-when-cross-origin"
-              },
               "Content-Type": {
                 "description": "",
                 "type": "string",
@@ -337,7 +1319,7 @@
               "access-token": {
                 "description": "",
                 "type": "string",
-                "x-example-value": "X8PuDTOAUhivXxUiRvRJ4A"
+                "x-example-value": "_E4ExzTj4N4zHdmMJtqIKQ"
               },
               "token-type": {
                 "description": "",
@@ -347,121 +1329,38 @@
               "client": {
                 "description": "",
                 "type": "string",
-                "x-example-value": "xKtj8ZB5iAWUi0R6pVXYNg"
+                "x-example-value": "gAI7kAzwJr45pi-eCzOvBQ"
               },
               "expiry": {
                 "description": "",
                 "type": "string",
-                "x-example-value": "1610732537"
+                "x-example-value": "1611259639"
               },
               "uid": {
                 "description": "",
                 "type": "string",
-                "x-example-value": "carolanne.mraz@reingersawayn.biz"
-              },
-              "ETag": {
-                "description": "",
-                "type": "string",
-                "x-example-value": "W/\"e79118098c05ae91bffaf51fa9840682\""
-              },
-              "Cache-Control": {
-                "description": "",
-                "type": "string",
-                "x-example-value": "max-age=0, private, must-revalidate"
-              },
-              "X-Request-Id": {
-                "description": "",
-                "type": "string",
-                "x-example-value": "c7c59aae-f5e7-4603-bee8-50e4a539f705"
-              },
-              "X-Runtime": {
-                "description": "",
-                "type": "string",
-                "x-example-value": "0.054068"
-              },
-              "Vary": {
-                "description": "",
-                "type": "string",
-                "x-example-value": "Origin"
+                "x-example-value": "rogelio_ondricka@marks.info"
               },
               "Content-Length": {
                 "description": "",
                 "type": "string",
-                "x-example-value": "138"
+                "x-example-value": "122"
               }
             },
             "examples": {
               "application/json": {
                 "user": {
-                  "id": 624,
-                  "email": "carolanne.mraz@reingersawayn.biz",
-                  "first_name": "Shaylee",
-                  "last_name": "Bogisich",
-                  "username": "dandre_marquardt"
+                  "id": 564,
+                  "email": "rogelio_ondricka@marks.info",
+                  "first_name": "Demetrius",
+                  "last_name": "Steuber",
+                  "username": "finn"
                 }
               }
             }
-          }
-        },
-        "deprecated": false,
-        "security": [
-
-        ]
-      }
-    },
-    "/api/v1/user/profile": {
-      "get": {
-        "tags": [
-          "Users"
-        ],
-        "summary": "",
-        "description": "",
-        "consumes": [
-          "application/json"
-        ],
-        "produces": [
-          "application/json"
-        ],
-        "parameters": [
-          {
-            "name": "access-token",
-            "in": "header",
-            "description": "",
-            "required": true,
-            "type": "string"
           },
-          {
-            "name": "client",
-            "in": "header",
-            "description": "",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "uid",
-            "in": "header",
-            "description": "",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "token-type",
-            "in": "header",
-            "description": "",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "expiry",
-            "in": "header",
-            "description": "",
-            "required": false,
-            "type": "integer"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Getting data of current user",
+          "400": {
+            "description": "Invalid attributes",
             "schema": {
               "description": "",
               "type": "object",
@@ -469,105 +1368,23 @@
               }
             },
             "headers": {
-              "X-Frame-Options": {
-                "description": "",
-                "type": "string",
-                "x-example-value": "SAMEORIGIN"
-              },
-              "X-XSS-Protection": {
-                "description": "",
-                "type": "string",
-                "x-example-value": "1; mode=block"
-              },
-              "X-Content-Type-Options": {
-                "description": "",
-                "type": "string",
-                "x-example-value": "nosniff"
-              },
-              "X-Download-Options": {
-                "description": "",
-                "type": "string",
-                "x-example-value": "noopen"
-              },
-              "X-Permitted-Cross-Domain-Policies": {
-                "description": "",
-                "type": "string",
-                "x-example-value": "none"
-              },
-              "Referrer-Policy": {
-                "description": "",
-                "type": "string",
-                "x-example-value": "strict-origin-when-cross-origin"
-              },
               "Content-Type": {
                 "description": "",
                 "type": "string",
                 "x-example-value": "application/json; charset=utf-8"
               },
-              "access-token": {
-                "description": "",
-                "type": "string",
-                "x-example-value": "t5U3hR8UAZ865YeP7E9vbA"
-              },
-              "token-type": {
-                "description": "",
-                "type": "string",
-                "x-example-value": "Bearer"
-              },
-              "client": {
-                "description": "",
-                "type": "string",
-                "x-example-value": "ODWqI0pYT4kMdvB6stDYRg"
-              },
-              "expiry": {
-                "description": "",
-                "type": "string",
-                "x-example-value": "1610732537"
-              },
-              "uid": {
-                "description": "",
-                "type": "string",
-                "x-example-value": "timmothy@bashiriancole.com"
-              },
-              "ETag": {
-                "description": "",
-                "type": "string",
-                "x-example-value": "W/\"2683411709e95201b3bb77ca4c48e954\""
-              },
-              "Cache-Control": {
-                "description": "",
-                "type": "string",
-                "x-example-value": "max-age=0, private, must-revalidate"
-              },
-              "X-Request-Id": {
-                "description": "",
-                "type": "string",
-                "x-example-value": "83d72b2e-2a9e-49bd-a5d9-8e0b4ef45904"
-              },
-              "X-Runtime": {
-                "description": "",
-                "type": "string",
-                "x-example-value": "0.050956"
-              },
-              "Vary": {
-                "description": "",
-                "type": "string",
-                "x-example-value": "Origin"
-              },
               "Content-Length": {
                 "description": "",
                 "type": "string",
-                "x-example-value": "123"
+                "x-example-value": "40"
               }
             },
             "examples": {
               "application/json": {
-                "user": {
-                  "id": 625,
-                  "email": "timmothy@bashiriancole.com",
-                  "first_name": "Ryann",
-                  "last_name": "Romaguera",
-                  "username": "geovanny"
+                "errors": {
+                  "email": [
+                    "is not an email"
+                  ]
                 }
               }
             }
@@ -581,6 +1398,18 @@
     }
   },
   "tags": [
+    {
+      "name": "Passwords",
+      "description": ""
+    },
+    {
+      "name": "Registrations",
+      "description": ""
+    },
+    {
+      "name": "Sessions",
+      "description": ""
+    },
     {
       "name": "Users",
       "description": ""

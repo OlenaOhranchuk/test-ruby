@@ -53,6 +53,7 @@ group :test do
   gem 'faker', '~> 1.7.3'
   gem 'shoulda-matchers', '~> 3.1.1'
   gem 'simplecov', '~> 0.13.0', require: false
+  # TODO: We might want to consider using VCR instead of Web webmock.
   gem 'webmock', '~> 2.3.2'
 end
 
