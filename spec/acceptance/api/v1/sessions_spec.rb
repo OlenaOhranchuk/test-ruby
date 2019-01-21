@@ -10,10 +10,16 @@ resource 'Sessions', type: :acceptance do
       parameter :password
     end
 
-    example 'Singing in a user' do
+    example 'Signing in a user' do
       do_request(user: { email: user.email, password: '12345678' })
 
       expect(status).to eq(200)
+    end
+
+    example 'Invalid password or email' do
+      do_request(user: { email: 'test@test.com', password: '12345678' })
+
+      expect(status).to eq(401)
     end
   end
 
@@ -21,7 +27,7 @@ resource 'Sessions', type: :acceptance do
     add_auth_parameters(optional: false)
     before { authenticate(user) }
 
-    example 'Singing out the current user' do
+    example 'Signing out the current user' do
       do_request
 
       expect(status).to eq(200)

@@ -21,9 +21,15 @@ resource 'Users', type: :acceptance do
 
       expect(status).to eq(200)
     end
+
+    example 'User is not found' do
+      do_request(id: 7)
+
+      expect(status).to eq(404)
+    end
   end
 
-  patch '/api/v1/user' do
+  put '/api/v1/user' do
     with_options scope: :user, in: :body do
       parameter :username
       parameter :first_name
@@ -36,6 +42,12 @@ resource 'Users', type: :acceptance do
       do_request(user: attrs)
 
       expect(status).to eq(200)
+    end
+
+    example 'Invalid attributes' do
+      do_request(user: { email: 'test.com' })
+
+      expect(status).to eq(400)
     end
   end
 end

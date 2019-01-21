@@ -3,7 +3,7 @@
 module Api
   module V1
     class UsersController < Api::V1::ApiController
-      helper_method :user
+      before_action :find_user
 
       def show; end
 
@@ -12,7 +12,7 @@ module Api
       end
 
       def update
-        user.update!(user_params)
+        @user.update!(user_params)
         render :show
       end
 
@@ -22,7 +22,7 @@ module Api
         params.require(:user).permit(:username, :first_name, :last_name, :email)
       end
 
-      def user
+      def find_user
         @user ||= user_id.present? ? User.find(user_id) : current_user
       end
 

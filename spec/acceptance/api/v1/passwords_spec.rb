@@ -40,7 +40,7 @@ resource 'Passwords', type: :acceptance do
       expect(status).to eq(200)
     end
 
-    example 'Invalid password' do
+    example 'New password is invalid' do
       no_doc { @password_reset_headers = get_password_reset_headers }
       @password_reset_headers.each { |name, value| header name, value.first }
       do_request(password: '12345', password_confirmation: '12345')

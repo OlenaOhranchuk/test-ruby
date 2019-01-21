@@ -14,11 +14,18 @@ resource 'Registrations', type: :acceptance do
       parameter :last_name
     end
 
-    example 'Singing up a user' do
+    example 'Signing up a user' do
       attrs = attributes_for(:user).slice(:email, :password, :username, :first_name, :last_name)
       do_request(user: attrs.merge(password_confirmation: attrs[:password]))
 
       expect(status).to eq(200)
+    end
+
+    example 'Invalid attributes' do
+      attrs = attributes_for(:user).slice(:email, :password, :username, :first_name, :last_name)
+      do_request(user: attrs.merge(password_confirmation: '12345'))
+
+      expect(status).to eq(422)
     end
   end
 
@@ -40,6 +47,16 @@ resource 'Registrations', type: :acceptance do
       )
 
       expect(status).to eq(200)
+    end
+
+    example 'Invalid attributes' do
+      do_request(
+        current_password: '12345',
+        password: 'qwerty12',
+        password_confirmation: 'qwerty12'
+      )
+
+      expect(status).to eq(422)
     end
   end
 
