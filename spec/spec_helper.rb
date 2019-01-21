@@ -51,7 +51,7 @@ RspecApiDocumentation.configure do |config|
   config.format = :open_api
   config.request_body_formatter = proc { |params| params.to_json }
   config.client_method = :api_client
-  config.response_headers_to_include = %w(
+  config.response_headers_to_include = %w[
     Content-Length
     Content-Type
     access-token
@@ -60,5 +60,5 @@ RspecApiDocumentation.configure do |config|
     client
     expiry
     uid
-  )
+  ]
 end

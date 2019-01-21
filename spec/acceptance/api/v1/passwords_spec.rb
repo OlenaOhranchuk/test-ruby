@@ -33,7 +33,7 @@ resource 'Passwords', type: :acceptance do
     end
 
     example 'Updating the password' do
-      no_doc { @password_reset_headers = get_password_reset_headers }
+      no_doc { @password_reset_headers = password_reset_headers }
       @password_reset_headers.each { |name, value| header name, value.first }
       do_request(password: '12345678', password_confirmation: '12345678')
 
@@ -41,7 +41,7 @@ resource 'Passwords', type: :acceptance do
     end
 
     example 'New password is invalid' do
-      no_doc { @password_reset_headers = get_password_reset_headers }
+      no_doc { @password_reset_headers = password_reset_headers }
       @password_reset_headers.each { |name, value| header name, value.first }
       do_request(password: '12345', password_confirmation: '12345')
 
@@ -50,7 +50,7 @@ resource 'Passwords', type: :acceptance do
   end
 end
 
-def get_password_reset_headers
+def password_reset_headers
   # Request a password change.
   attrs = { email: user.email, redirect_url: 'http://localhost:3000' }
   api_client.post '/api/v1/users/password', attrs
