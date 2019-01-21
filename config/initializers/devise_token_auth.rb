@@ -1,4 +1,6 @@
 DeviseTokenAuth.setup do |config|
+  # TODO: I think we should add some env variable here,
+  # something like this: ENV['CONFIRM_SUCCESS_URL'].
   config.default_confirm_success_url = '/'
   config.default_password_reset_url = ENV['PASSWORD_RESET_URL']
   config.enable_standard_devise_support = true
