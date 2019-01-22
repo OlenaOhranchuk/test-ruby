@@ -9,24 +9,41 @@ module Api
 
       private
 
-      def sign_up_params
-        params.require(:user).permit(:email, :password, :password_confirmation,
-                                     :username, :first_name, :last_name)
-      end
-
-      def render_create_success
-        render json: { user: resource_data }
-      end
-
-      # PUT api/v1/users allows updating only a password and it requires
-      # a current password for that. It actually could update anything in
-      # the current user, but we already have another route for that, which
-      # is PUT api/v1/user. Using this new route we can update anything
-      # expect password.
+      # Override #sign_up_params or #account_update_params methods
+      # instead of adding this before action if you need to pass
+      # more complicated params(embedded etc.).
       def configure_permitted_parameters
         devise_parameter_sanitizer.permit(
+          :sign_up,
+          keys: %i[
+            email
+            password
+            password_confirmation
+            username
+            first_name
+            last_name
+            confirm_success_url
+          ]
+        )
+
+        # Using PUT api/v1/users route (devise token auth), you're
+        # able to update a password(providing current password) and other
+        # user's attributes. But this route isn't very flexible.
+        # There is another one, PUT api/v1/user. You can configure it however
+        # you want, because it points to our custom controller.
+        # Eventually, you can decide which one to use. But keep in mind
+        # that the last route doesn't support a password update(you can implement it).
+        devise_parameter_sanitizer.permit(
           :account_update,
-          keys: %i[password password_confirmation current_password]
+          keys: %i[
+            email
+            password
+            password_confirmation
+            username
+            first_name
+            last_name
+            current_password
+          ]
         )
       end
     end

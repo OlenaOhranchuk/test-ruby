@@ -31,10 +31,10 @@ resource 'Users', type: :acceptance do
 
   put '/api/v1/user' do
     with_options scope: :user, in: :body do
+      parameter :email
       parameter :username
       parameter :first_name
       parameter :last_name
-      parameter :email
     end
 
     example 'Updating data of the current user' do
