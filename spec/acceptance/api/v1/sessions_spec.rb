@@ -5,19 +5,19 @@ resource 'Sessions', type: :acceptance do
   let(:user) { create(:user) }
 
   post '/api/v1/users/sign_in' do
-    with_options scope: :user, in: :body do
+    with_options in: :body do
       parameter :email
       parameter :password
     end
 
     example 'Signing in a user' do
-      do_request(user: { email: user.email, password: '12345678' })
+      do_request(email: user.email, password: '12345678')
 
       expect(status).to eq(200)
     end
 
     example 'Invalid password or email' do
-      do_request(user: { email: 'test@test.com', password: '12345678' })
+      do_request(email: 'test@test.com', password: '12345678')
 
       expect(status).to eq(401)
     end
