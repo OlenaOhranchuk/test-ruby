@@ -1,6 +1,11 @@
 Documentation:
   Enabled: false
 
+AllCops:
+  Exclude:
+    - db/**/*
+    - vendor/**/*
+
 Layout/SpaceBeforeFirstArg:
   Exclude:
     - app/views/api/**/**/*
@@ -15,7 +20,7 @@ Metrics/AbcSize:
   Max: 20
 
 Metrics/BlockLength:
-  CountComments: false  # count full line comments?
+  CountComments: false
   Max: 25
   Exclude:
     - config/**/*
@@ -26,7 +31,7 @@ Metrics/BlockNesting:
   Max: 4
 
 Metrics/ClassLength:
-  CountComments: false  # count full line comments?
+  CountComments: false
   Max: 200
 
 # Avoid complex methods.
@@ -34,11 +39,11 @@ Metrics/CyclomaticComplexity:
   Max: 6
 
 Metrics/MethodLength:
-  CountComments: false  # count full line comments?
+  CountComments: false
   Max: 24
 
 Metrics/ModuleLength:
-  CountComments: false  # count full line comments?
+  CountComments: false
   Max: 200
 
 Metrics/LineLength:
