@@ -4,16 +4,19 @@
 
 2. Go the project's root.
 
-3. Install bundler:
+3. Set the git hooks folder:
+	git config core.hooksPath hooks
+
+4. Install bundler:
 	gem install bundler
 
-4. Install gems:
+5. Install gems:
 	bundle exec bundle install --path vendor/bundle
 
-5. Create, migrate and seed the database:
+6. Create, migrate and seed the database:
 	bundle exec rake db:create
 	bundle exec rake db:migrate
 	bundle exec rake db:seed
 
-6. Run the server:
+7. Run the server:
 	bundle exec rails s
