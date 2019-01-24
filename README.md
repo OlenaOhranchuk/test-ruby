@@ -69,7 +69,7 @@ With `rake code_analysis` you can run the code analysis tools, you can omit some
 
 ## Guidance
 
-### Node.js installation
+### Node.js setup
 
 1. `sudo apt update`
 2. `sudo apt install nodejs`
@@ -130,3 +130,22 @@ Useful links:
 Useful links:
 - https://github.com/rbenv/rbenv
 - https://github.com/rbenv/ruby-build
+
+Some Rbenv commands:
+- List avaiable ruby versions: `rbenv versions`
+- Show current ruby version set by rbenv: `rbenv version`
+- List avaiable for instalation ruby versions: `rbenv install -l`
+- Install a new ruby version: `rbenv install 2.4.1`
+- List other rbenv commands: `rbenv help`
+- Set a ruby version for a shell session (for a current open terminal tab): `rbenv shell 2.4.1`
+
+Ruby version can be set by `.ruby-version` file in the root of a project.
+
+### Redis setup
+
+1. Install redis-server:\
+    `sudo apt update`\
+    `sudo apt install redis-server`
+
+2. Verify that the server is running using the following command:\
+    `sudo systemctl status redis`
