@@ -6,7 +6,6 @@ require 'factory_bot_rails'
 require 'acceptance_group_helpers'
 require 'acceptance_helpers'
 require 'helpers'
-require 'webmock/rspec'
 require 'shoulda/matchers'
 
 FactoryBot.factories.clear
