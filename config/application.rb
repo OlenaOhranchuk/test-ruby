@@ -41,7 +41,7 @@ module App
       host: ENV['SERVER_URL']
     }
     config.action_mailer.default_options = {
-      from: 'no-reply@api.com'
+      from: ENV['MAIL_SENDER']
     }
 
     config.generators do |g|
