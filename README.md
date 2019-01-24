@@ -22,16 +22,23 @@ This template comes with:
 
 ## How to use (TODO: change this)
 
-1. Clone this repo
-2. Install PostgreSQL in case you don't have it
-3. Create your `database.yml` and `application.yml` file
-4. `bundle install`
-5. Generate a secret key with `rake secret` and paste this value into the `application.yml`.
-6. `rake db:create`
-7. `rake db:migrate`
-8. `rspec` and make sure all tests pass
-9. `rails s`
-10. You can now try your REST services!
+1. Clone this repository
+2. Go to the root of the project
+3. Set git hooks folder: `git config core.hooksPath hooks`
+4. Install [Node.js](#nodejs)
+5. Install PostgreSQL
+6. Install Redis
+7. Install Ruby using Rbenv if you don't already use RVM
+8. Install bundler: `gem install bundler`
+9. Bundle gems: `bundle install --path vendor/bundle`
+10. Create your `database.yml` and `application.yml` files using examples in `config` folder
+11. Generate a secret key with `bundle exec rake secret` and paste this value into the `application.yml`
+12. Create databases: `bundle exec rake db:create`
+13. Migrate databases: `bundle exec rake db:migrate`
+14. Run seeds: `bundle exec rake db:seed`
+15. Run tests to make sure they all pass: `bundle exec rspec`
+16. Run the server: `bundle exec rails s`
+17. You can now try your REST services!
 
 ## Gems
 
@@ -69,7 +76,7 @@ With `rake code_analysis` you can run the code analysis tools, you can omit some
 
 ## Guidance
 
-### Node.js setup
+### <a name="nodejs"></a> Node.js setup
 
 1. `sudo apt update`
 2. `sudo apt install nodejs`
@@ -104,7 +111,7 @@ Useful links:
   - https://www.digitalocean.com/community/tutorials/how-to-install-and-use-postgresql-on-ubuntu-18-04
   - https://www.howtoforge.com/tutorial/ruby-on-rails-ror-with-postgresql-on-ubuntu-16-04/
 
-### Rbenv setup
+### Rbenv / Ruby setup
 
 1. Install rbenv and ruby-build:\
     `sudo apt update`\
@@ -127,19 +134,22 @@ Useful links:
 	  `mkdir -p "$(rbenv root)"/plugins`\
 	  `git clone https://github.com/rbenv/ruby-build.git "$(rbenv root)"/plugins/ruby-build`
 
-Useful links:
-- https://github.com/rbenv/rbenv
-- https://github.com/rbenv/ruby-build
+7. Install ruby version which is specified in `.ruby-version` file:\
+    `rbenv install 2.x.x`
 
 Some Rbenv commands:
-- List avaiable ruby versions: `rbenv versions`
+- List available ruby versions: `rbenv versions`
 - Show current ruby version set by rbenv: `rbenv version`
-- List avaiable for instalation ruby versions: `rbenv install -l`
+- List available for installation ruby versions: `rbenv install -l`
 - Install a new ruby version: `rbenv install 2.4.1`
 - List other rbenv commands: `rbenv help`
 - Set a ruby version for a shell session (for a current open terminal tab): `rbenv shell 2.4.1`
 
 Ruby version can be set by `.ruby-version` file in the root of a project.
+
+Useful links:
+- https://github.com/rbenv/rbenv
+- https://github.com/rbenv/ruby-build
 
 ### Redis setup
 
