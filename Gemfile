@@ -42,8 +42,6 @@ group :development do
   gem 'brakeman', '~> 4.3.1'
   gem 'letter_opener', '~> 1.4.1'
   gem 'listen', '~> 3.0.5'
-  gem 'rails_best_practices', '~> 1.19.0'
-  gem 'reek', '~> 4.7.2'
   gem 'rubocop', '~> 0.49.1'
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
@@ -53,8 +51,6 @@ group :test do
   gem 'faker', '~> 1.7.3'
   gem 'shoulda-matchers', '~> 3.1.1'
   gem 'simplecov', '~> 0.13.0', require: false
-  # TODO: We might want to consider using VCR instead of Web webmock.
-  gem 'webmock', '~> 2.3.2'
 end
 
 group :assets do
@@ -62,4 +58,4 @@ group :assets do
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem 'tzinfo-data', platforms: %i(mingw mswin x64_mingw jruby)
+gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]

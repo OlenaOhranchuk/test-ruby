@@ -1,3 +1,4 @@
 SERVER_URL: 'localhost:3000'
-CONFIRM_SUCCESS_URL: 'http://localhost:3000'
-PASSWORD_RESET_URL: 'http://localhost:3000'
+CONFIRM_SUCCESS_URL: 'localhost:3000'
+PASSWORD_RESET_URL: 'localhost:3000'
+MAIL_SENDER: 'no-reply@api.com'

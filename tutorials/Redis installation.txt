@@ -1,6 +1,0 @@
-1. Install redis-server:
-  sudo apt update
-  sudo apt install redis-server
-
-2. Verify if the server is running using the following command:
-  sudo systemctl status redis

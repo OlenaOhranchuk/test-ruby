@@ -8,11 +8,11 @@ describe 'PUT api/v1/users/passwords/', type: :request do
       redirect_url: ENV['PASSWORD_RESET_URL']
     }
     get edit_user_password_path, params: params, headers: user.create_new_auth_token
-    edit_response_params = Addressable::URI.parse(response.header['Location']).query_values
+    edit_response_params = CGI.parse(URI.parse(response.headers['Location']).query)
     {
-      'access-token' => edit_response_params['token'],
-      'uid' => edit_response_params['uid'],
-      'client' => edit_response_params['client_id']
+      'access-token' => edit_response_params['token'].first,
+      'uid' => edit_response_params['uid'].first,
+      'client' => edit_response_params['client_id'].first
     }
   end
   let(:new_password) { '123456789' }
