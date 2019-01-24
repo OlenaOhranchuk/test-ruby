@@ -60,12 +60,6 @@ This template comes with:
 - [Shoulda Matchers](https://github.com/thoughtbot/shoulda-matchers) adds other testing matchers
 - [Simplecov](https://github.com/colszowka/simplecov) for code coverage
 
-## Optional configuration
-
-- Set your [frontend URL](https://github.com/cyu/rack-cors#origin) in `config/initializers/rack_cors.rb`
-- Set your mail sender in `config/initializers/devise.rb`
-- Config your timezone accordingly in `application.rb`.
-
 ## Code quality
 
 With `rake code_analysis` you can run the code analysis tools, you can omit some rules with:
@@ -109,3 +103,30 @@ In your `database.yml` file you need to use the username and the password you cr
 Useful links:
   - https://www.digitalocean.com/community/tutorials/how-to-install-and-use-postgresql-on-ubuntu-18-04
   - https://www.howtoforge.com/tutorial/ruby-on-rails-ror-with-postgresql-on-ubuntu-16-04/
+
+### Rbenv setup
+
+1. Install rbenv and ruby-build:\
+    `sudo apt update`\
+    `sudo apt install rbenv ruby-build`
+
+2. Initialize rbenv when terminal starts:\
+    `rbenv init`
+
+3. The previous command should output something like this:\
+    `# Load rbenv automatically by appending`\
+    `# the following to ~/.bashrc:`\
+    \
+    `eval "$(rbenv init -)"`
+
+4. You need to copy the last line (eval...) and past it at the end of your `.bashrc` file.
+
+5. Reopen your terminal. Now rbenv should be installed.
+
+6. (optional) Install ruby-build as a plugin if you need to get the latest versions of ruby:\
+	  `mkdir -p "$(rbenv root)"/plugins`\
+	  `git clone https://github.com/rbenv/ruby-build.git "$(rbenv root)"/plugins/ruby-build`
+
+Useful links:
+- https://github.com/rbenv/rbenv
+- https://github.com/rbenv/ruby-build
