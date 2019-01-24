@@ -20,7 +20,7 @@ This template comes with:
 - Code quality tools
 - Swagger API documentation
 
-## How to use (TODO: change this)
+## Setup
 
 1. Clone this repository
 2. Go to the root of the project
@@ -135,13 +135,13 @@ Useful links:
     \
     `eval "$(rbenv init -)"`
 
-4. You need to copy the last line (eval...) and past it at the end of your `.bashrc` file.
+4. You need to copy the last line (eval...) and past it at the end of your `.bashrc` file
 
-5. Reopen your terminal. Now rbenv should be installed.
+5. Rbenv should be ready after reopening the terminal
 
 6. (optional) Install ruby-build as a plugin if you need to get the latest versions of ruby:\
-	  `mkdir -p "$(rbenv root)"/plugins`\
-	  `git clone https://github.com/rbenv/ruby-build.git "$(rbenv root)"/plugins/ruby-build`
+    `mkdir -p "$(rbenv root)"/plugins`\
+    `git clone https://github.com/rbenv/ruby-build.git "$(rbenv root)"/plugins/ruby-build`
 
 7. Install ruby version which is specified in `.ruby-version` file:\
     `rbenv install 2.x.x`
@@ -159,3 +159,23 @@ Ruby version can be set by `.ruby-version` file in the root of a project.
 Useful links:
 - https://github.com/rbenv/rbenv
 - https://github.com/rbenv/ruby-build
+
+## Swagger API documentation (if you need to setup it in another project)
+
+1. Download Swagger UI at https://github.com/swagger-api/swagger-ui
+2. Copy `dist` folder from Swagger UI project to `publinc/swagger/` in your project
+3. Add this route to your `config/routes.rb` file:\
+    `get 'api' => redirect('/swagger/dist/index.html?url=/api/open_api.json')`
+4. Install RSpec API documentation gem: https://github.com/zipmark/rspec_api_documentation
+5. Set these configuration options in your `spec/spec_helper.rb` file:
+    ```
+    RspecApiDocumentation.configure do |config|
+      config.docs_dir = Rails.root.join("public", "api")
+      config.format = :open_api
+      config.request_body_formatter = Proc.new { |params| params.to_json }
+      config.client_method = :api_client
+    end
+    ```
+6. Add a few tests to spec/acceptance folder.
+7. Generate JSON file for Swagger: `bundle exec rake docs:generate`
+8. Check if swagger works correctly by visiting http://localhost:3000/api
