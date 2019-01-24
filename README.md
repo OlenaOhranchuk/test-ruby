@@ -26,9 +26,9 @@ This template comes with:
 2. Go to the root of the project
 3. Set git hooks folder: `git config core.hooksPath hooks`
 4. Install [Node.js](#nodejs)
-5. Install PostgreSQL
-6. Install Redis
-7. Install Ruby using Rbenv if you don't already use RVM
+5. Install [PostgreSQL](#postgresql)
+6. Install [Redis](#redis)
+7. Install [Ruby using Rbenv](#ruby_rbenv) if you don't already use RVM
 8. Install bundler: `gem install bundler`
 9. Bundle gems: `bundle install --path vendor/bundle`
 10. Create your `database.yml` and `application.yml` files using examples in `config` folder
@@ -81,7 +81,7 @@ With `rake code_analysis` you can run the code analysis tools, you can omit some
 1. `sudo apt update`
 2. `sudo apt install nodejs`
 
-### PostgreSQL setup
+### <a name="postgresql"></a> PostgreSQL setup
 
 1. Install PostgreSQL:\
     `sudo apt update`\
@@ -111,7 +111,16 @@ Useful links:
   - https://www.digitalocean.com/community/tutorials/how-to-install-and-use-postgresql-on-ubuntu-18-04
   - https://www.howtoforge.com/tutorial/ruby-on-rails-ror-with-postgresql-on-ubuntu-16-04/
 
-### Rbenv / Ruby setup
+### <a name="redis"></a> Redis setup
+
+1. Install redis-server:\
+    `sudo apt update`\
+    `sudo apt install redis-server`
+
+2. Verify that the server is running using the following command:\
+    `sudo systemctl status redis`
+
+### <a name="ruby_rbenv"></a> Ruby / Rbenv setup
 
 1. Install rbenv and ruby-build:\
     `sudo apt update`\
@@ -150,12 +159,3 @@ Ruby version can be set by `.ruby-version` file in the root of a project.
 Useful links:
 - https://github.com/rbenv/rbenv
 - https://github.com/rbenv/ruby-build
-
-### Redis setup
-
-1. Install redis-server:\
-    `sudo apt update`\
-    `sudo apt install redis-server`
-
-2. Verify that the server is running using the following command:\
-    `sudo systemctl status redis`
