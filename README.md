@@ -72,3 +72,40 @@ With `rake code_analysis` you can run the code analysis tools, you can omit some
 
 - [Rubocop](https://github.com/bbatsov/rubocop/blob/master/config/default.yml) Edit `.rubocop.yml`
 - [Brakeman](https://github.com/presidentbeef/brakeman) Run `brakeman -I` to generate `config/brakeman.ignore`
+
+## Guidance
+
+### Node.js installation
+
+1. `sudo apt update`
+2. `sudo apt install nodejs`
+
+### PostgreSQL setup
+
+1. Install PostgreSQL:\
+    `sudo apt update`\
+    `sudo apt install postgresql postgresql-contrib libpq-dev`
+
+2. Switch over to postgres account and access PostgreSQL prompt:\
+    `sudo -i -u postgres`\
+    `psql`
+
+3. Give postgres user a new password:\
+    `\password postgres`
+
+4. Create a new role named 'your_username':\
+    `create role your_username with createdb login password 'your_password';`
+
+5. Check that the role has been created:\
+    `\du`
+
+6. Exit from PostgreSQL prompt and postgres account:\
+    `\q`\
+    `exit`
+
+Now PostgreSQL should be ready for your rails app.\
+In your `database.yml` file you need to use the username and the password you created on the step 4.
+
+Useful links:
+  - https://www.digitalocean.com/community/tutorials/how-to-install-and-use-postgresql-on-ubuntu-18-04
+  - https://www.howtoforge.com/tutorial/ruby-on-rails-ror-with-postgresql-on-ubuntu-16-04/
