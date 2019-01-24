@@ -126,25 +126,29 @@ Useful links:
     `sudo apt update`\
     `sudo apt install rbenv ruby-build`
 
-2. Initialize rbenv when terminal starts:\
+2. Initialize rbenv:\
     `rbenv init`
 
 3. The previous command should output something like this:\
-    `# Load rbenv automatically by appending`\
-    `# the following to ~/.bashrc:`\
-    \
-    `eval "$(rbenv init -)"`
+    ```
+    # Load rbenv automatically by appending
+    # the following to ~/.bashrc:
+
+    eval "$(rbenv init -)"
+    ```
 
 4. You need to copy the last line (eval...) and past it at the end of your `.bashrc` file
 
 5. Rbenv should be ready after reopening the terminal
 
-6. (optional) Install ruby-build as a plugin if you need to get the latest versions of ruby:\
+6. Install ruby version which is specified in `.ruby-version` file:\
+    `rbenv install 2.x.x`
+
+7. Install `ruby-build` as a plugin if the ruby version you want to install isn't available in rbenv(it may be brand new), that way you'll get access to the latest versions of ruby:\
     `mkdir -p "$(rbenv root)"/plugins`\
     `git clone https://github.com/rbenv/ruby-build.git "$(rbenv root)"/plugins/ruby-build`
 
-7. Install ruby version which is specified in `.ruby-version` file:\
-    `rbenv install 2.x.x`
+
 
 Some Rbenv commands:
 - List available ruby versions: `rbenv versions`
@@ -176,6 +180,6 @@ Useful links:
       config.client_method = :api_client
     end
     ```
-6. Add a few tests to spec/acceptance folder.
+6. Add a few tests to `spec/acceptance` folder
 7. Generate JSON file for Swagger: `bundle exec rake docs:generate`
 8. Check if swagger works correctly by visiting http://localhost:3000/api
