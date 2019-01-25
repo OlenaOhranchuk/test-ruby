@@ -7,25 +7,11 @@ resource 'Users', type: :acceptance do
   let(:user) { create(:user) }
   before { authenticate(user) }
 
-  get '/api/v1/user/profile' do
+  get '/api/v1/user' do
     example 'Getting data of the current user' do
       do_request
 
       expect(status).to eq(200)
-    end
-  end
-
-  get '/api/v1/users/:id' do
-    example "Getting user's data" do
-      do_request(id: user.id)
-
-      expect(status).to eq(200)
-    end
-
-    example 'User is not found' do
-      do_request(id: 7)
-
-      expect(status).to eq(404)
     end
   end
 
