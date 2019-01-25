@@ -5,14 +5,20 @@ green='\033[0;32m'
 yellow='\033[0;33m'
 NC='\033[0m'
 
-echo "${green}[GIT PRE-COMMIT HOOK]: Runnnig Rubocop${NC}"
+echo "${green}[GIT PRE-COMMIT HOOK] Runnnig Rubocop${NC}"
 
-FILES="$(git diff --staged --name-only)"
-bin/bundle exec rubocop ${FILES}
+FILES="$(git diff --cached --name-only --diff-filter=AMC)"
 
-if [ $? -ne 0 ]; then
-	echo "${red}[GIT PRE-COMMIT HOOK]: Fix the issues and commit again${NC}"
-	exit 1
+if [ -n "$FILES" ]
+then
+	bin/bundle exec rubocop ${FILES}
+
+	if [ $? -ne 0 ]; then
+	  echo "${red}[GIT PRE-COMMIT HOOK] Fix the issues and commit again${NC}"
+	  exit 1
+	fi
+else
+	echo "${green}[GIT PRE-COMMIT HOOK] No files to check${NC}"
 fi
 
 exit 0
