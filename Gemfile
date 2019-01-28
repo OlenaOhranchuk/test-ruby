@@ -8,7 +8,7 @@ gem 'activeadmin', '~> 1.4.3'
 gem 'aws-sdk-s3', '~> 1', require: false
 gem 'bootsnap', '~> 1.3.0'
 gem 'devise', '~> 4.4.3'
-gem 'devise_token_auth', '~> 0.1.43'
+gem 'devise_token_auth', '~> 1.0.0'
 gem 'draper', '~> 3.0.0'
 gem 'figaro', '~> 1.1.1'
 gem 'haml-rails', '~> 1.0.0'
