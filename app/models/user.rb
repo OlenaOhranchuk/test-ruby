@@ -40,19 +40,12 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable,
-         :confirmable
+         :confirmable, :omniauthable
   include DeviseTokenAuth::Concerns::User
 
   validates :uid, uniqueness: { scope: :provider }
 
-  before_validation :init_uid
-
-  def self.from_social_provider(provider, user_params)
-    where(provider: provider, uid: user_params['id']).first_or_create do |user|
-      user.password = Devise.friendly_token[0, 20]
-      user.assign_attributes user_params.except('id')
-    end
-  end
+  before_validation :init_uid, if: :new_record?
 
   private
 

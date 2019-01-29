@@ -1,9 +1,6 @@
-# encoding: utf-8
-
 module Api
   module V1
     class RegistrationsController < DeviseTokenAuth::RegistrationsController
-      protect_from_forgery with: :exception
       include Api::Concerns::ActAsApiRequest
       before_action :configure_permitted_parameters, if: :devise_controller?
 

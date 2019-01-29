@@ -20,13 +20,6 @@ module Api
         request.session_options[:skip] = true
       end
 
-      def render_error(status, message, _data = nil)
-        response = {
-          error: message
-        }
-        render json: response, status: status
-      end
-
       def request_content_type
         request.content_type
       end
