@@ -1,6 +1,6 @@
 module Api
   module V1
-    class SessionsController < DeviseTokenAuth::SessionsController
+    class ConfirmationsController < DeviseTokenAuth::ConfirmationsController
       include Api::Concerns::ActAsApiRequest
     end
   end
