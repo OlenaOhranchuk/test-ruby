@@ -210,12 +210,12 @@ In this tutorial we assume that you use a `User` model with the routes mapped to
     This URL should point to this action `api/v1/omniauth_callbacks#redirect_callbacks`\
     You need to change that URL if your app maps a different route to that action
 
-5. Set `GOOGLE_KEY` and `GOOGLE_SECRET` environment variables with the credentials you created in Google Console.
+5. Set `GOOGLE_KEY` and `GOOGLE_SECRET` environment variables with the credentials you created in Google Console
 
 6. Start the server and go to this URL:\
     `http://localhost:3000/api/v1/users/google_oauth2?auth_origin_url=http://localhost:3000`
 
-7. Now you should be logged in with Google and be redirected back to `http://localhost:3000` with all the necessary headers in query string for further requests.
+7. Now you should be logged in with Google and be redirected back to `http://localhost:3000` with all the necessary headers in the query string for further requests.
 
-At the 6th step, `auth_origin_url` pameter is a URL to which users will be redirect after login.\
+At the 6th step, `auth_origin_url` pameter is a URL to which users will be redirected after login.\
 It should point to Front End server. We set `http://localhost:3000` just for example.
