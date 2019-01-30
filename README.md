@@ -183,3 +183,40 @@ Useful links:
 6. Add a few tests to `spec/acceptance` folder
 7. Generate JSON file for Swagger: `bundle exec rake docs:generate`
 8. Check if swagger works correctly by visiting http://localhost:3000/api
+
+
+## Google authentication (devise_token_auth + omniauth-google-oauth2)
+
+In this tutorial we assume that you use a `User` model with the routes mapped to `/api/v1/users`.
+
+1. Install and configure `devise_token_auth`:\
+    https://devise-token-auth.gitbook.io/devise-token-auth
+
+2. Install and configure `omniauth-google-oauth2`:\
+    `gem 'omniauth-google-oauth2'`\
+    `bundle install`\
+    Create `config/initializers/omniauth.rb` initializer with the folling code:
+    ```
+    Rails.application.config.middleware.use OmniAuth::Builder do
+      provider :google_oauth2, ENV['GOOGLE_KEY'], ENV['GOOGLE_SECRET']
+    end
+    ```
+    More details here: https://devise-token-auth.gitbook.io/devise-token-auth/config/omniauth
+
+3. Follow the first step(Register your app with Google) in this article:\
+    https://medium.com/@ajayramesh/social-login-with-omniauth-and-rails-5-0-ad2bbd2a998e
+
+4. Set this URL in `Authorized redirect URIs` in Google Console instead the one that was in the article:\
+    http://localhost:3000/omniauth/google_oauth2/callback\
+    This URL should point to this action `api/v1/omniauth_callbacks#redirect_callbacks`\
+    You need to change that URL if your app maps a different route to that action
+
+5. Set `GOOGLE_KEY` and `GOOGLE_SECRET` environment variables with the credentials you created in Google Console.
+
+6. Start the server and go to this URL:\
+    `http://localhost:3000/api/v1/users/google_oauth2?auth_origin_url=http://localhost:3000`
+
+7. Now you should be logged in with Google and be redirected back to `http://localhost:3000` with all the necessary headers in query string for further requests.
+
+At the 6th step, `auth_origin_url` pameter is a URL to which users will be redirect after login.\
+It should point to Front End server. We set `http://localhost:3000` just for example.
