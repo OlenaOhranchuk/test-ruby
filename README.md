@@ -206,7 +206,7 @@ In this tutorial we assume that you use a `User` model with the routes mapped to
     https://medium.com/@ajayramesh/social-login-with-omniauth-and-rails-5-0-ad2bbd2a998e
 
 4. Set this URL in `Authorized redirect URIs` in Google Console instead the one that was in the article:\
-    http://localhost:3000/omniauth/google_oauth2/callback\
+    http://localhost:3000/omniauth/google_oauth2/callback \
     This URL should point to this action `api/v1/omniauth_callbacks#redirect_callbacks`\
     You need to change that URL if your app maps a different route to that action
 
