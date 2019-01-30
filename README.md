@@ -193,8 +193,7 @@ In this tutorial we assume that you use a `User` model with the routes mapped to
     https://devise-token-auth.gitbook.io/devise-token-auth
 
 2. Install and configure `omniauth-google-oauth2`:\
-    `gem 'omniauth-google-oauth2'`\
-    `bundle install`\
+    Add `omniauth-google-oauth2` to Gemfile and run `bundle install`\
     Create `config/initializers/omniauth.rb` initializer with the folling code:
     ```
     Rails.application.config.middleware.use OmniAuth::Builder do
