@@ -1,5 +1,7 @@
 ---
 :concurrency: 5
+qa:
+  :concurrency: 10
 staging:
   :concurrency: 10
 production:

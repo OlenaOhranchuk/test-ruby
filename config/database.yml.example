@@ -8,13 +8,21 @@ default: &default
   port: 5432
 
 development:
- <<: *default
- database:
+  <<: *default
+  database: my_app_development
 
 test:
- <<: *default
- database:
+  <<: *default
+  database: my_app_test
+
+qa:
+  <<: *default
+  database: my_app_qa
+
+staging:
+  <<: *default
+  database: my_app_staging
 
 production:
- <<: *default
- database:
+  <<: *default
+  database: my_app_production
