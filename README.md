@@ -148,8 +148,6 @@ Useful links:
     `mkdir -p "$(rbenv root)"/plugins`\
     `git clone https://github.com/rbenv/ruby-build.git "$(rbenv root)"/plugins/ruby-build`
 
-
-
 Some Rbenv commands:
 - List available ruby versions: `rbenv versions`
 - Show current ruby version set by rbenv: `rbenv version`
@@ -163,6 +161,12 @@ Ruby version can be set by `.ruby-version` file in the root of a project.
 Useful links:
 - https://github.com/rbenv/rbenv
 - https://github.com/rbenv/ruby-build
+
+### Basic HTTP authentication
+
+You can enable basic authentication for the whole application by setting `BASIC_AUTH_NAME` and `BASIC_AUTH_PASSWORD` environment variables.\
+This may be useful on QA and Staging.\
+The authentication gets enabled only if you set those variables.
 
 ## Swagger API documentation (if you need to setup it in another project)
 
@@ -183,7 +187,6 @@ Useful links:
 6. Add a few tests to `spec/acceptance` folder
 7. Generate JSON file for Swagger: `bundle exec rake docs:generate`
 8. Check if swagger works correctly by visiting http://localhost:3000/api
-
 
 ## Google authentication (devise_token_auth + omniauth-google-oauth2)
 
