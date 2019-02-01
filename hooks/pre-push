@@ -1,0 +1,17 @@
+#!/bin/sh
+
+red='\033[0;31m'
+green='\033[0;32m'
+yellow='\033[0;33m'
+NC='\033[0m'
+
+echo "${green}[GIT PRE-PUSH HOOK] Runnnig Brakeman${NC}"
+
+bin/bundle exec brakeman . -z -q
+
+if [ $? -ne 0 ]; then
+	echo "${red}[GIT PRE-PUSH HOOK] Fix the issues and commit again${NC}"
+	exit 1
+fi
+
+exit 0
