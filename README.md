@@ -165,8 +165,8 @@ Useful links:
 ### Basic HTTP authentication
 
 You can enable basic authentication for the whole application by setting `BASIC_AUTH_NAME` and `BASIC_AUTH_PASSWORD` environment variables.\
-This may be useful for QA and Staging.\
-The authentication gets enabled only when you set those variables.
+This may be useful on QA and Staging.\
+The authentication gets enabled only if you set those variables.
 
 ## Swagger API documentation (if you need to setup it in another project)
 
