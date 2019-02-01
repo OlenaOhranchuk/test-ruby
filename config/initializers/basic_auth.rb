@@ -1,6 +1,6 @@
-if Rails.env.qa? || Rails.env.staging? || Rails.env.production?
+if ENV['BASIC_AUTH_NAME'].present? && ENV['BASIC_AUTH_PASSWORD'].present?
   Rails.application.config.basic_auth_creds = {
-    name: 'rails_api_base',
-    password: 'password'
+    name: ENV['BASIC_AUTH_NAME'],
+    password: ENV['BASIC_AUTH_PASSWORD']
   }
 end
