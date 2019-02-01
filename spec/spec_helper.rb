@@ -46,7 +46,7 @@ RSpec.configure do |config|
 end
 
 RspecApiDocumentation.configure do |config|
-  config.docs_dir = Rails.root.join('public', 'api')
+  config.docs_dir = Rails.root.join('app', 'views', 'api', 'v1', 'api')
   config.format = :open_api
   config.request_body_formatter = proc { |params| params.to_json }
   config.client_method = :api_client

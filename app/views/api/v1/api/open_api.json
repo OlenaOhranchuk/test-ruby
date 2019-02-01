@@ -124,7 +124,7 @@
               "access-token": {
                 "description": "",
                 "type": "string",
-                "x-example-value": "qzK2zXeLOiVPybjBvy0_jw"
+                "x-example-value": "7orakASQVAMnuKuptPprBQ"
               },
               "token-type": {
                 "description": "",
@@ -134,38 +134,38 @@
               "client": {
                 "description": "",
                 "type": "string",
-                "x-example-value": "pa-gH_O5iIDmPHkCHDtnHA"
+                "x-example-value": "5wKysjQhw8dKc0LgIbtm_g"
               },
               "expiry": {
                 "description": "",
                 "type": "string",
-                "x-example-value": "1611948351"
+                "x-example-value": "1612200032"
               },
               "uid": {
                 "description": "",
                 "type": "string",
-                "x-example-value": "frida.jakubowski@rempel.com"
+                "x-example-value": "ludwig.ernser@luettgen.biz"
               },
               "Content-Length": {
                 "description": "",
                 "type": "string",
-                "x-example-value": "357"
+                "x-example-value": "364"
               }
             },
             "examples": {
               "application/json": {
                 "success": true,
                 "data": {
-                  "id": 1899,
+                  "id": 1963,
                   "provider": "email",
                   "allow_password_change": false,
-                  "email": "frida.jakubowski@rempel.com",
-                  "uid": "frida.jakubowski@rempel.com",
-                  "first_name": "Brando",
-                  "last_name": "Kiehn",
-                  "username": "mollie",
-                  "created_at": "2019-01-29T19:25:51.167Z",
-                  "updated_at": "2019-01-29T19:25:51.305Z"
+                  "email": "ludwig.ernser@luettgen.biz",
+                  "uid": "ludwig.ernser@luettgen.biz",
+                  "first_name": "Neoma",
+                  "last_name": "Pouros",
+                  "username": "dashawn.wiegand",
+                  "created_at": "2019-02-01T17:20:32.467Z",
+                  "updated_at": "2019-02-01T17:20:32.617Z"
                 },
                 "message": "Your password has been successfully updated."
               }
@@ -188,7 +188,7 @@
               "access-token": {
                 "description": "",
                 "type": "string",
-                "x-example-value": "9I1AMG6obtvxeDwtyv_V6w"
+                "x-example-value": "FjfhiL4LXsjmUlQPxe-DPg"
               },
               "token-type": {
                 "description": "",
@@ -198,17 +198,17 @@
               "client": {
                 "description": "",
                 "type": "string",
-                "x-example-value": "jYfzB7zbqwhJRdJIyddGcw"
+                "x-example-value": "T6Z9li3eny4tMVKc2kzqGw"
               },
               "expiry": {
                 "description": "",
                 "type": "string",
-                "x-example-value": "1611948351"
+                "x-example-value": "1612200032"
               },
               "uid": {
                 "description": "",
                 "type": "string",
-                "x-example-value": "jodie@framihickle.info"
+                "x-example-value": "romaine_grady@kautzer.biz"
               },
               "Content-Length": {
                 "description": "",
@@ -288,13 +288,13 @@
               "Content-Length": {
                 "description": "",
                 "type": "string",
-                "x-example-value": "130"
+                "x-example-value": "140"
               }
             },
             "examples": {
               "application/json": {
                 "success": true,
-                "message": "An email has been sent to 'heber@bogankris.name' containing instructions for resetting your password."
+                "message": "An email has been sent to 'dewayne.schneider@douglas.info' containing instructions for resetting your password."
               }
             }
           },
@@ -442,7 +442,7 @@
               "access-token": {
                 "description": "",
                 "type": "string",
-                "x-example-value": "SN7ASotS8N71p3t9Kwm0dA"
+                "x-example-value": "BuWI3ryLLALjVs16I5-eiQ"
               },
               "token-type": {
                 "description": "",
@@ -452,38 +452,38 @@
               "client": {
                 "description": "",
                 "type": "string",
-                "x-example-value": "G0qoPokZ6vgM1L1Hu8WKwg"
+                "x-example-value": "rBOZQWDJeOXQ102s31YSZQ"
               },
               "expiry": {
                 "description": "",
                 "type": "string",
-                "x-example-value": "1611948351"
+                "x-example-value": "1612200032"
               },
               "uid": {
                 "description": "",
                 "type": "string",
-                "x-example-value": "jasper.metz@prohaska.info"
+                "x-example-value": "anais@witting.com"
               },
               "Content-Length": {
                 "description": "",
                 "type": "string",
-                "x-example-value": "303"
+                "x-example-value": "293"
               }
             },
             "examples": {
               "application/json": {
                 "status": "success",
                 "data": {
-                  "id": 1902,
-                  "email": "jasper.metz@prohaska.info",
-                  "username": "gladyce",
-                  "first_name": "Hilbert",
-                  "last_name": "Hickle",
+                  "id": 1966,
+                  "email": "anais@witting.com",
+                  "username": "jee.stiedemann",
+                  "first_name": "Paige",
+                  "last_name": "Labadie",
                   "provider": "email",
-                  "uid": "jasper.metz@prohaska.info",
+                  "uid": "anais@witting.com",
                   "allow_password_change": false,
-                  "created_at": "2019-01-29T19:25:51.479Z",
-                  "updated_at": "2019-01-29T19:25:51.590Z"
+                  "created_at": "2019-02-01T17:20:32.798Z",
+                  "updated_at": "2019-02-01T17:20:32.907Z"
                 }
               }
             }
@@ -505,7 +505,7 @@
               "access-token": {
                 "description": "",
                 "type": "string",
-                "x-example-value": "WVlZ-uMBa8Y1Pc5n47AUmA"
+                "x-example-value": "DXwuGHJFTciEWWjHSPAztA"
               },
               "token-type": {
                 "description": "",
@@ -515,17 +515,17 @@
               "client": {
                 "description": "",
                 "type": "string",
-                "x-example-value": "ZzVXqRnouiZTVp0xsePDKw"
+                "x-example-value": "HoYAA1jcIYf3DAhsuO78pA"
               },
               "expiry": {
                 "description": "",
                 "type": "string",
-                "x-example-value": "1611948351"
+                "x-example-value": "1612200032"
               },
               "uid": {
                 "description": "",
                 "type": "string",
-                "x-example-value": "jules@lindgren.net"
+                "x-example-value": "danny@lehner.co"
               },
               "Content-Length": {
                 "description": "",
@@ -625,23 +625,23 @@
               "Content-Length": {
                 "description": "",
                 "type": "string",
-                "x-example-value": "311"
+                "x-example-value": "315"
               }
             },
             "examples": {
               "application/json": {
                 "status": "success",
                 "data": {
-                  "id": 1901,
-                  "email": "triston.jacobson@sporer.org",
+                  "id": 1965,
+                  "email": "valentin@altenwerth.com",
                   "allow_password_change": false,
-                  "first_name": "Kathleen",
-                  "last_name": "Brakus",
-                  "username": "elena.wiza",
-                  "created_at": "2019-01-29T19:25:51.452Z",
-                  "updated_at": "2019-01-29T19:25:51.452Z",
+                  "first_name": "Rosalinda",
+                  "last_name": "Johnston",
+                  "username": "tierra.christiansen",
+                  "created_at": "2019-02-01T17:20:32.770Z",
+                  "updated_at": "2019-02-01T17:20:32.770Z",
                   "provider": "email",
-                  "uid": "triston.jacobson@sporer.org"
+                  "uid": "valentin@altenwerth.com"
                 }
               }
             }
@@ -663,7 +663,7 @@
               "Content-Length": {
                 "description": "",
                 "type": "string",
-                "x-example-value": "303"
+                "x-example-value": "305"
               }
             },
             "examples": {
@@ -673,9 +673,9 @@
                   "id": null,
                   "email": "test.com",
                   "allow_password_change": false,
-                  "first_name": "Hattie",
-                  "last_name": "Turcotte",
-                  "username": "grant",
+                  "first_name": "Alba",
+                  "last_name": "Kunde",
+                  "username": "grady.conroy",
                   "created_at": null,
                   "updated_at": null,
                   "provider": "email",
@@ -751,13 +751,13 @@
               "Content-Length": {
                 "description": "",
                 "type": "string",
-                "x-example-value": "94"
+                "x-example-value": "87"
               }
             },
             "examples": {
               "application/json": {
                 "status": "success",
-                "message": "Account with UID 'armani@marvinstamm.org' has been destroyed."
+                "message": "Account with UID 'shayna@hills.io' has been destroyed."
               }
             }
           }
@@ -821,7 +821,7 @@
               "access-token": {
                 "description": "",
                 "type": "string",
-                "x-example-value": "CiEKeuyjj5yl9l1h-UiF2A"
+                "x-example-value": "pdY7c6i-Z-P4UNxkjjHEtw"
               },
               "token-type": {
                 "description": "",
@@ -831,35 +831,35 @@
               "client": {
                 "description": "",
                 "type": "string",
-                "x-example-value": "cE7z5uEd6olguayxiipHrw"
+                "x-example-value": "E2BhlyolARYdoKC1lDXUZA"
               },
               "expiry": {
                 "description": "",
                 "type": "string",
-                "x-example-value": "1611948351"
+                "x-example-value": "1612200033"
               },
               "uid": {
                 "description": "",
                 "type": "string",
-                "x-example-value": "dario_vandervort@lemke.org"
+                "x-example-value": "rebeka.kulas@greenholt.biz"
               },
               "Content-Length": {
                 "description": "",
                 "type": "string",
-                "x-example-value": "208"
+                "x-example-value": "202"
               }
             },
             "examples": {
               "application/json": {
                 "data": {
-                  "id": 1905,
-                  "email": "dario_vandervort@lemke.org",
+                  "id": 1969,
+                  "email": "rebeka.kulas@greenholt.biz",
                   "provider": "email",
-                  "uid": "dario_vandervort@lemke.org",
+                  "uid": "rebeka.kulas@greenholt.biz",
                   "allow_password_change": false,
-                  "first_name": "Alan",
-                  "last_name": "Hartmann",
-                  "username": "lea_abbott"
+                  "first_name": "Jevon",
+                  "last_name": "Kling",
+                  "username": "adrien"
                 }
               }
             }
@@ -1038,7 +1038,7 @@
               "access-token": {
                 "description": "",
                 "type": "string",
-                "x-example-value": "q-39FM2FiQub7J9gIxcfVA"
+                "x-example-value": "LG_wzoAjEW0qaqwwRHudFA"
               },
               "token-type": {
                 "description": "",
@@ -1048,32 +1048,32 @@
               "client": {
                 "description": "",
                 "type": "string",
-                "x-example-value": "GJu9eVJTf9JN_1fQKb4S2Q"
+                "x-example-value": "c4IFagKuTlEP9fxJYqvTRQ"
               },
               "expiry": {
                 "description": "",
                 "type": "string",
-                "x-example-value": "1611948352"
+                "x-example-value": "1612200033"
               },
               "uid": {
                 "description": "",
                 "type": "string",
-                "x-example-value": "denis@donnelly.info"
+                "x-example-value": "retta@durgan.org"
               },
               "Content-Length": {
                 "description": "",
                 "type": "string",
-                "x-example-value": "119"
+                "x-example-value": "112"
               }
             },
             "examples": {
               "application/json": {
                 "user": {
-                  "id": 1907,
-                  "email": "denis@donnelly.info",
-                  "first_name": "Aleen",
-                  "last_name": "Beahan",
-                  "username": "haskell_hintz"
+                  "id": 1971,
+                  "email": "retta@durgan.org",
+                  "first_name": "Forrest",
+                  "last_name": "Schultz",
+                  "username": "hunter"
                 }
               }
             }
@@ -1184,7 +1184,7 @@
               "access-token": {
                 "description": "",
                 "type": "string",
-                "x-example-value": "GqwD7elDd2MqfJPhtWpIpQ"
+                "x-example-value": "md_9C5Jq7ov14JHlIv8Vag"
               },
               "token-type": {
                 "description": "",
@@ -1194,32 +1194,32 @@
               "client": {
                 "description": "",
                 "type": "string",
-                "x-example-value": "19DOHVBuSPfh0suCl6UinQ"
+                "x-example-value": "bb5npXWpnWvnqJrGuNR0JQ"
               },
               "expiry": {
                 "description": "",
                 "type": "string",
-                "x-example-value": "1611948352"
+                "x-example-value": "1612200033"
               },
               "uid": {
                 "description": "",
                 "type": "string",
-                "x-example-value": "wilbert.cummerata@willkulas.name"
+                "x-example-value": "lacey_predovic@casper.net"
               },
               "Content-Length": {
                 "description": "",
                 "type": "string",
-                "x-example-value": "126"
+                "x-example-value": "116"
               }
             },
             "examples": {
               "application/json": {
                 "user": {
-                  "id": 1908,
-                  "email": "wilbert.cummerata@willkulas.name",
-                  "first_name": "Shawna",
-                  "last_name": "Green",
-                  "username": "justine"
+                  "id": 1972,
+                  "email": "lacey_predovic@casper.net",
+                  "first_name": "Diana",
+                  "last_name": "Schoen",
+                  "username": "leie"
                 }
               }
             }

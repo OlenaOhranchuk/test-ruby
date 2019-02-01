@@ -10,12 +10,13 @@ Rails.application.routes.draw do
     token_validations:  'api/v1/token_validations'
   }
 
-  get 'api' => redirect('/swagger/dist/index.html?url=/api/open_api.json')
+  get 'api' => redirect('/swagger/dist/index.html?url=/api/v1/open_api')
 
   namespace :api do
     namespace :v1, defaults: { format: :json } do
+      get :open_api, to: 'api#open_api'
+
       devise_scope :user do
-        get :status, to: 'api#status'
         resource :user, only: %i[show update]
       end
     end
