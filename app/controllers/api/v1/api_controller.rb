@@ -4,7 +4,7 @@ module Api
       include Api::Concerns::ActAsApiRequest
       include DeviseTokenAuth::Concerns::SetUserByToken
 
-      before_action :authenticate_user!, except: :status
+      before_action :authenticate_user!, except: :open_api
 
       layout false
       respond_to :json
@@ -16,9 +16,8 @@ module Api
       rescue_from AbstractController::ActionNotFound,  with: :render_not_found
       rescue_from ActionController::ParameterMissing,  with: :render_parameter_missing
 
-      def status
-        render json: { online: true }
-      end
+      # JSON for the Swagger client.
+      def open_api; end
 
       private
 
