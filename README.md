@@ -61,6 +61,7 @@ This template comes with:
 - [Oj](https://github.com/ohler55/oj) for optimized json
 - [Pry](https://github.com/pry/pry) for enhancing the ruby shell
 - [Puma](https://github.com/puma/puma) for the server
+- [Pundit](https://github.com/varvet/pundit) for authorization
 - [Rack CORS](https://github.com/cyu/rack-cors) for handling CORS
 - [RSpec](https://github.com/rspec/rspec) for testing
 - [Rubocop](https://github.com/bbatsov/rubocop/) for ruby linting
